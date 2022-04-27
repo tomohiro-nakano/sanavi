@@ -13,7 +13,7 @@
         <div class="form-group col-md-6 col-xs-12">
             <div class="input-group">
                 <div class="input-group-prepend">
-                    <div class="input-group-text"><i class="fa fa-book"></i>　施設名</div>
+                    <div class="input-group-text"><i class="fa fa-check-square-o" aria-hidden="true"></i>　施 設 名</div>
                 </div>
                 <input type="text" name="place_name" class="form-control" value="{{ old('place_name') }}" autofocus>
             </div>
@@ -21,7 +21,7 @@
         <div class="form-group col-md-6 col-xs-12">
             <div class="input-group">
                 <div class="input-group-prepend">
-                    <div class="input-group-text"><i class="fa fa-sort-numeric-asc"></i>　室　温</div>
+                    <div class="input-group-text"><i class="fa fa-thermometer-three-quarters" aria-hidden="true"></i>　室　温</div>
                 </div>
                 <input type="text" maxlength="3" name="room_temp" class="form-control" value="{{ old('room_temp') }}"
                     autofocus>
@@ -30,7 +30,7 @@
         <div class="form-group col-md-6 col-xs-12">
             <div class="input-group">
                 <div class="input-group-prepend">
-                    <div class="input-group-text"><i class="fa fa-sort-numeric-asc"></i>　水　温</div>
+                    <div class="input-group-text"><i class="fa fa-tint" aria-hidden="true"></i>　水　温</div>
                 </div>
                 <input type="text" maxlength="2" name="water_temp" class="form-control" value="{{ old('water_temp') }}"
                     autofocus>
@@ -47,14 +47,14 @@
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-prepend">
-                    <div class="input-group-text"><i class="fa fa-book"></i>　住　所</div>
+                    <div class="input-group-text"><i class="fa fa-map-marker" aria-hidden="true"></i>　住　所</div>
                 </div>
                 <input type="text" name="address" class="form-control" value="{{ old('address') }}" autofocus>
             </div>
         </div>
 
         <div class="form-group">
-            <label for="inputFile" class="input-group-text">画像アップロード</label>
+            <label for="inputFile" class="input-group-text"><i class="fa fa-picture-o" aria-hidden="true"></i>　画像アップロード</label>
             <div class="custom-file">
                 <input type="file" class="custom-file-input" id="inputFile" name="place_image">
                 <label class="custom-file-label" for="inputFile" data-browse="選択">ファイルを選択(ここにドロップすることもできます)</label>

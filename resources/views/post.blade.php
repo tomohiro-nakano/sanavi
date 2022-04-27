@@ -13,7 +13,7 @@
         <div class="form-group col-md-6 col-xs-12">
             <div class="input-group">
                 <div class="input-group-prepend">
-                    <div class="input-group-text"><i class="fa fa-book"></i>　施設名</div>
+                    <div class="input-group-text"><i class="fa fa-check-square-o" aria-hidden="true"></i>　施 設 名</div>
                 </div>
                 <input disabled class="form-control bg-light" style="font-size:16px" value="{{ $place->place_name }}">
             </div>
@@ -22,7 +22,7 @@
             <div class="form-group col-md-6 col-xs-12">
                 <div class="input-group">
                     <div class="input-group-prepend">
-                        <div class="input-group-text"><i class="fa fa-sort-numeric-asc"></i>　総合評価</div>
+                        <div class="input-group-text"><i class="fa fa-star-half-o" aria-hidden="true"></i>　総合評価</div>
                     </div>
                     <star-rating :star-size="25" :increment="0.5" text-class="custom-text" :rating="3.0"
                         :round-start-rating="false" @rating-selected="setRating"></star-rating>
@@ -32,7 +32,7 @@
             <div class="form-group col-md-6 col-xs-12">
                 <div class="input-group">
                     <div class="input-group-prepend">
-                        <div class="input-group-text"><i class="fa fa-sort-numeric-asc"></i>　ととのい度</div>
+                        <div class="input-group-text"><i class="fa fa-star-half-o" aria-hidden="true"></i>　ととのい度</div>
                     </div>
                         <star-rating :star-size="25" :increment="0.5" text-class="custom-text" :rating="3.0"
                             :round-start-rating="false" @rating-selected="setRating"></star-rating>
@@ -42,7 +42,7 @@
             <div class="form-group col-md-6 col-xs-12">
                 <div class="input-group">
                     <div class="input-group-prepend">
-                        <div class="input-group-text"><i class="fa fa-sort-numeric-asc"></i>　温度評価</div>
+                        <div class="input-group-text"><i class="fa fa-star-half-o" aria-hidden="true"></i>　温度評価</div>
                     </div>
                     <div id="rt">
                         <star-rating :star-size="25" :increment="0.5" text-class="custom-text" :rating="3.0"
@@ -54,7 +54,7 @@
             <div class="form-group col-md-6 col-xs-12">
                 <div class="input-group">
                     <div class="input-group-prepend">
-                        <div class="input-group-text"><i class="fa fa-sort-numeric-asc"></i>　水風呂評価</div>
+                        <div class="input-group-text"><i class="fa fa-star-half-o" aria-hidden="true"></i>　水風呂評価</div>
                     </div>
                     <div>
                         <star-rating :star-size="25" :increment="0.5" text-class="custom-text" :rating="3.0"
@@ -66,7 +66,7 @@
             <div class="form-group col-md-6 col-xs-12">
                 <div class="input-group">
                     <div class="input-group-prepend">
-                        <div class="input-group-text"><i class="fa fa-sort-numeric-asc"></i>　外気浴（休憩）評価</div>
+                        <div class="input-group-text"><i class="fa fa-star-half-o" aria-hidden="true"></i>　外気浴（休憩）評価</div>
                     </div>
                     <div>
                         <star-rating :star-size="25" :increment="0.5" text-class="custom-text" :rating="3.0"
@@ -78,7 +78,7 @@
             <div class="form-group col-md-6 col-xs-12">
                 <div class="input-group">
                     <div class="input-group-prepend">
-                        <div class="input-group-text"><i class="fa fa-sort-numeric-asc"></i>　混雑度</div>
+                        <div class="input-group-text"><i class="fa fa-star-half-o" aria-hidden="true"></i>　混 雑 度</div>
                     </div>
                     <div>
                         <star-rating :star-size="25" :increment="0.5" text-class="custom-text" :rating="3.0"
@@ -92,7 +92,7 @@
             <div class="form-group col-md-6 col-xs-12">
                 <div class="input-group">
                     <div class="input-group-prepend">
-                        <div class="input-group-text"><i class="fa fa-calendar-o"></i>　訪問日</div>
+                        <div class="input-group-text"><i class="fa fa-calendar-o"></i>　訪 問 日</div>
                     </div>
                     <input type="date" name="visit_date" class="form-control datetimepicker-input"
                         value="{{ old('published') }}" id="datetimepicker" data-toggle="datetimepicker"
@@ -104,7 +104,7 @@
             <div class="form-group col-md-6 col-xs-12">
                 <div class="input-group">
                     <div class="input-group-prepend">
-                        <div class="input-group-text"><i class="fa fa-calendar-o"></i>　感想</div>
+                        <div class="input-group-text"><i class="fa fa-commenting-o" aria-hidden="true"></i>　感　想</div>
                     </div>
                     <textarea name="comment" cols="50" rows="10"></textarea>
                 </div>

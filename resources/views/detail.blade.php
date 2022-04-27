@@ -13,7 +13,7 @@
        <div class="form-group col-12">
            <div class="input-group mb-4">
                <div class="input-group-prepend">
-                   <div class="input-group-text"><i class="fa fa-book"></i>　施設名</div>
+                   <div class="input-group-text"><i class="fa fa-check-square-o" aria-hidden="true"></i>　施 設 名</div>
                </div>
                <input disabled class="form-control bg-light" style="font-size:16px" value="{{ $place->place_name }}">
            </div>
@@ -21,7 +21,7 @@
        <div class="form-group col-12">
            <div class="input-group mb-4">
                <div class="input-group-prepend">
-                   <div class="input-group-text"><i class="fa fa-sort-numeric-asc"></i>　温度</div>
+                   <div class="input-group-text"><i class="fa fa-thermometer-three-quarters" aria-hidden="true"></i>　室　温</div>
                </div>
                <input disabled class="form-control bg-light" style="font-size:16px" value="{{ $place->room_temp }}℃">
            </div>
@@ -29,7 +29,7 @@
        <div class="form-group col-12">
            <div class="input-group mb-4">
                <div class="input-group-prepend">
-                   <div class="input-group-text"><i class="fa fa-sort-numeric-asc"></i>　水温</div>
+                   <div class="input-group-text"><i class="fa fa-tint" aria-hidden="true"></i>　水　温</div>
                </div>
                <input disabled class="form-control bg-light" style="font-size:16px" value="{{ $place->water_temp }}℃">
            </div>
@@ -46,7 +46,7 @@
        <div class="form-group col-12">
            <div class="input-group mb-4">
                <div class="input-group-prepend">
-                   <div class="input-group-text"><i class="fa fa-calendar-o"></i>　総合評価</div>
+                   <div class="input-group-text"><i class="fa fa-star-half-o" aria-hidden="true"></i>　総合評価</div>
                </div>
                <input disabled class="form-control bg-light" style="font-size:16px" value="{{ '' }}">
            </div>
@@ -54,7 +54,7 @@
        <div class="form-group col-12">
            <div class="input-group mb-4">
                <div class="input-group-prepend">
-                   <div class="input-group-text"><i class="fa fa-calendar-o"></i>　ととのい度</div>
+                   <div class="input-group-text"><i class="fa fa-star-half-o" aria-hidden="true"></i>　ととのい度</div>
                </div>
                <input disabled class="form-control bg-light" style="font-size:16px" value="{{ '' }}">
            </div>
@@ -62,7 +62,7 @@
        <div class="form-group col-12">
            <div class="input-group mb-4">
                <div class="input-group-prepend">
-                   <div class="input-group-text"><i class="fa fa-calendar-o"></i>　温度評価</div>
+                   <div class="input-group-text"><i class="fa fa-star-half-o" aria-hidden="true"></i>　温度評価</div>
                </div>
                <input disabled class="form-control bg-light" style="font-size:16px" value="{{ '' }}">
            </div>
@@ -70,7 +70,7 @@
        <div class="form-group col-12">
            <div class="input-group mb-4">
                <div class="input-group-prepend">
-                   <div class="input-group-text"><i class="fa fa-calendar-o"></i>　水温評価</div>
+                   <div class="input-group-text"><i class="fa fa-star-half-o" aria-hidden="true"></i>　水温評価</div>
                </div>
                <input disabled class="form-control bg-light" style="font-size:16px" value="{{ '' }}">
            </div>
@@ -78,7 +78,7 @@
        <div class="form-group col-12">
            <div class="input-group mb-4">
                <div class="input-group-prepend">
-                   <div class="input-group-text"><i class="fa fa-calendar-o"></i>　外気浴（休憩）評価</div>
+                   <div class="input-group-text"><i class="fa fa-star-half-o" aria-hidden="true"></i>　外気浴（休憩）評価</div>
                </div>
                <input disabled class="form-control bg-light" style="font-size:16px" value="{{ '' }}">
            </div>
@@ -86,7 +86,7 @@
        <div class="form-group col-12">
            <div class="input-group mb-4">
                <div class="input-group-prepend">
-                   <div class="input-group-text"><i class="fa fa-calendar-o"></i>　混雑度</div>
+                   <div class="input-group-text"><i class="fa fa-star-half-o" aria-hidden="true"></i>　混雑度</div>
                </div>
                <input disabled class="form-control bg-light" style="font-size:16px" value="{{ '' }}">
            </div>
@@ -94,7 +94,7 @@
        <div class="form-group col-12">
            <div class="input-group mb-4">
                <div class="input-group-prepend">
-                   <div class="input-group-text"><i class="fa fa-calendar-o"></i>　住所</div>
+                   <div class="input-group-text"><i class="fa fa-map-marker" aria-hidden="true"></i>　住　所</div>
                </div>
                <input disabled class="form-control bg-light" style="font-size:16px" value="{{ $place->address }}">
            </div>

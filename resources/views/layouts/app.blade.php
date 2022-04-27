@@ -112,9 +112,9 @@
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="/"><i class="fa fa-home"></i> HOME</a></li>
-                            <li><a href="/post"><i class="fa fa-plus"></i> サ活投稿</a></li>
+                            <li><a href="/"> Sanaviとは？</a></li>
                             <li><a href="/place_post"><i class="fa fa-plus"></i> 施設投稿</a></li>
-                            <li><a href="/place_list"><i class=""></i> 施設一覧</a></li>
+                            <li><a href="/place_list"><i class="fa fa-list" aria-hidden="true"></i> 施設一覧</a></li>
                             <li><a data-toggle="modal" data-target="#myModal" href="#myModal"><i
                                         class="fa fa-envelope-o"></i></a></li>
 
