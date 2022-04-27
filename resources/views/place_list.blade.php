@@ -64,6 +64,3 @@
         </tfoot>
     </table>
 @endsection
-
-{{-- 以下は省略可能 --}}
-{{ Debugbar::log($place_lists->toArray()) }}
