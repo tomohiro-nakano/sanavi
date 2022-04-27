@@ -6,7 +6,7 @@
        <div class="form-group col-12">
            <div class="d-grid gap-2">
                <a href="{{ url($place->id . '/post') }}" class="btn btn-outline-secondary btn-lg">
-                   <i class=""></i>　サ活投稿する
+                   <i class=""></i>　サ活投稿
                </a>
            </div>
        </div>
