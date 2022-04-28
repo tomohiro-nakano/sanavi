@@ -33,69 +33,13 @@
 
     <!-- Main Stylesheet File -->
     <link href="css/style.css" rel="stylesheet">
+
+    
+
 </head>
 
 <body>
     <div id="app">
-        {{-- <header class="gl-header">
-            <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-3 shadow-sm">
-                <div class="container">
-                    <h1><a class="navbar-brand" href="{{ url('/') }}"></i> Sanavi - サウナレビューサイト </a></h1>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav me-auto">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="/"><i class="fa fa-home"></i> トップ</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/post"><i class="fa fa-plus"></i> サ活投稿</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/place_post"><i class="fa fa-plus"></i> 施設投稿</a>
-                            </li>
-                        </ul>
-                        <ul class="navbar-nav ms-auto">
-                            <!-- 一般ユーザ -->
-                            @guest
-                                @if (Route::has('login'))
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('login') }}">
-                                            <i class="fa fa-sign-in"></i> {{ __('ja.Login') }}
-                                        </a>
-                                    </li>
-                                @endif
-                                @if (Route::has('register'))
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('register') }}">
-                                            <i class="fa fa-user"></i> {{ __('ja.Assign') }}
-                                        </a>
-                                    </li>
-                                @endif
-                                <!-- ログイン済みユーザ -->
-                            @else
-                                <!-- ドロップダウンメニュー -->
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        {{ Auth::user()->name }} <span class="caret"></span>
-                                    </a>
-                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="{{ route('logout') }}"
-                                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                            <i class="fa fa-sign-out"></i> {{ __('ja.Logout') }}
-                                        </a>
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                            class="d-none"> @csrf </form>
-                                </li>
-                            @endguest
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </header> --}}
-
         <header class="gl-header">
             <!-- Fixed navbar -->
             <div class="navbar navbar-inverse navbar-fixed-top navbar-expand-md">
@@ -107,12 +51,19 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="{{ url('/') }}"></i>Sanavi</a>
+                        {{-- <a class="navbar-brand" href="{{ url('/') }}"></i>Sanavi</a> --}}
+                        <div class="tilt">
+                            <a href="/"><img src="img/logo/header_logo.png"  id="header_logo"></a>
+                        </div>
+
+
+
+
                     </div>
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="/"><i class="fa fa-home"></i> HOME</a></li>
-                            <li><a href="/"> Sanaviとは？</a></li>
+                            <li><a href="/"> TOP</a></li>
+                            <li><a href="/about"> Sanaviとは?</a></li>
                             <li><a href="/place_post"><i class="fa fa-plus"></i> 施設投稿</a></li>
                             <li><a href="/place_list"><i class="fa fa-list" aria-hidden="true"></i> 施設一覧</a></li>
                             <li><a data-toggle="modal" data-target="#myModal" href="#myModal"><i
@@ -170,11 +121,11 @@
     <footer>
         <div id="copyrights">
             <div class="container">
-              <p>
-                &copy; Copyrights <strong>Tomohiro Nakano</strong>. All Rights Reserved
-              </p>
+                <p>
+                    &copy; Copyrights <strong>Tomohiro Nakano</strong>. All Rights Reserved
+                </p>
             </div>
-          </div>
+        </div>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>

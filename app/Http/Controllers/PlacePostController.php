@@ -16,6 +16,11 @@ class PlacePostController extends Controller
         return view('top');
     }
 
+    public function about()
+    {
+        return view('about');
+    }
+
     public function index()
     {
         $collection = PlacePost::orderBy('id', 'asc')->paginate(6);
