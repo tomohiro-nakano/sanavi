@@ -3,6 +3,23 @@
    @section('title', 'サウナ施設詳細')
 
    @section('content')
+       {{-- 追加・更新フラッシュメッセージ --}}
+       @if (session('success'))
+           <div class="alert alert-success text-center fw-bold">
+               {{ session('success') }}
+           </div>
+       @elseif (session('update'))
+           <div class="alert alert-info text-center fw-bold">
+               {{ session('update') }}
+           </div>
+       @elseif (session('delete'))
+           <div class="alert alert-dark text-center fw-bold">
+               {{ session('delete') }}
+           </div>
+       @endif
+
+
+
        <div class="form-group col-12">
            <div class="d-grid gap-2">
                <a href="{{ url($place->id . '/post') }}" class="btn btn-outline-secondary btn-lg">

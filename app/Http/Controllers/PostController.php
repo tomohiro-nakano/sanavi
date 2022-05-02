@@ -54,9 +54,13 @@ class PostController extends Controller
         return redirect(url('/place_list/' . $request->place_id . '/detail'));
     }
 
-    public function destroy(Post $post)
+    public function destroy(Request $request, Post $post)
     {
+        Log::debug($request); //ログ出力（変数）
+        Log::debug(print_r($post, true)); //ログ出力（配列）
         Post::where('id', $post->id)->delete();
-        return redirect(url('/place_list'));
+        $request->session()->flash('delete', 'サ活投稿を削除しました');
+        // return redirect(url('/place_list'));
+        return redirect(url('/place_list/' . $post->place_id . '/detail'));
     }
 }
