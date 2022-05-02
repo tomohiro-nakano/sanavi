@@ -27,6 +27,7 @@ Route::group(['middleware' => 'auth'], function () { //ログイン認証しな�
     Route::post('/place_post', [PlacePostController::class, 'place_post_store']);
     Route::get('/{place}/place_edit', [PlacePostController::class, 'place_edit']);
     Route::put('/place_edit/{place_post}', [PlacePostController::class, 'update']);
+    Route::delete('/{place_post}/place_edit', [PlacePostController::class, 'destroy']);
     Route::get('/about', [PlacePostController::class, 'about']);
 
     Route::get('/{place}/post', [PostController::class, 'post']);

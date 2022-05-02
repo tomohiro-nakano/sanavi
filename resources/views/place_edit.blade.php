@@ -8,7 +8,8 @@
 @section('title', '施設編集')
 
 @section('content')
-    <form action="{{ url('place_edit/' . $place->id) }}" method="post" class="row" enctype="multipart/form-data">
+    <form action="{{ url('place_edit/' . $place->id) }}" method="post" class="row"
+        enctype="multipart/form-data">
         {{ method_field('PUT') }}
         {{ csrf_field() }}
         <input type='hidden' name='user_id' value="{{ Auth::user()->id }}">
@@ -61,7 +62,7 @@
         </div>
 
         @if ($place->place_image != '')
-            <img src="{{"/img/place_image/" . $place->place_image}}" alt="place_image">
+            <img src="{{ '/img/place_image/' . $place->place_image }}" alt="place_image">
             <div class="form-group">
                 <label for="inputFile" class="input-group-text">画像アップロード</label>
                 <div class="custom-file">
@@ -90,21 +91,43 @@
                 </a>
             </div>
         </div>
-        <div class="form-group col-3">
+        {{-- <div class="form-group col-3">
             <div class="d-grid gap-2">
-                <a href="{{ url('/place_list') }}" class="btn btn-outline-secondary btn-lg">
-                    <i class="fa fa-trash-o" aria-hidden="true"></i>　削除
-                </a>
+                <form action="{{ url($place->id . '/place_edit') }}" method="post">
+                    {{ csrf_field() }}
+                    {{ method_field('DELETE') }}
+                    <button type="submit" class="btn btn-outline-secondary btn-lg">
+                        <i class="fa fa-trash"></i> 削 除
+                    </button>
+                </form>
             </div>
-        </div>
-        <div class="form-group col-9">
+        </div> --}}
+
+
+
+        <div class="form-group col-6">
             <div class="d-grid gap-2">
                 <button type="submit" class="btn btn-secondary btn-lg">
                     <i class="fa fa-chevron-right"></i>　送 信
                 </button>
             </div>
         </div>
+
+
     </form>
+
+    <div class="form-group col-3">
+        <div class="d-grid gap-2">
+            <form action="{{ url($place->id . '/place_edit') }}" method='post'>
+                {{ csrf_field() }}
+                {{ method_field('DELETE') }}
+                {{-- <input type="submit" class="btn btn-outline-secondary btn-lg" name="delete" value="削除" onClick="delete_alert(event);return false;"> --}}
+                <button type="submit" class="btn btn-outline-secondary btn-lg" onClick="delete_alert(event);return false;">
+                    <i class="fa fa-trash"></i> 削 除
+                </button>
+            </form>
+        </div>
+    </div>
 
 
     <script>

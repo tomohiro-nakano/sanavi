@@ -21,7 +21,8 @@
        <div class="form-group col-12">
            <div class="input-group mb-4">
                <div class="input-group-prepend">
-                   <div class="input-group-text"><i class="fa fa-thermometer-three-quarters" aria-hidden="true"></i>　室　温</div>
+                   <div class="input-group-text"><i class="fa fa-thermometer-three-quarters" aria-hidden="true"></i>　室　温
+                   </div>
                </div>
                <input disabled class="form-control bg-light" style="font-size:16px" value="{{ $place->room_temp }}℃">
            </div>

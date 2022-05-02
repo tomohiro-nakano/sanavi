@@ -34,7 +34,7 @@
     <!-- Main Stylesheet File -->
     <link href="css/style.css" rel="stylesheet">
 
-    
+
 
 </head>
 
@@ -44,42 +44,30 @@
             <!-- Fixed navbar -->
             <div class="navbar navbar-inverse navbar-fixed-top navbar-expand-md">
                 <div class="container">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse"
-                            data-target=".navbar-collapse">
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        {{-- <a class="navbar-brand" href="{{ url('/') }}"></i>Sanavi</a> --}}
-                        <div class="tilt">
-                            <a href="/"><img src="img/logo/header_logo.png"  id="header_logo"></a>
-                        </div>
-
-
-
-
+                    {{-- ロゴ表示 --}}
+                    <div class="tilt">
+                        <a href="/"><img src="img/logo/header_logo.png" id="header_logo"></a>
                     </div>
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="/"> TOP</a></li>
-                            <li><a href="/about"> Sanaviとは?</a></li>
-                            <li><a href="/place_post"><i class="fa fa-plus"></i> 施設投稿</a></li>
-                            <li><a href="/place_list"><i class="fa fa-list" aria-hidden="true"></i> 施設一覧</a></li>
-                            <li><a data-toggle="modal" data-target="#myModal" href="#myModal"><i
+                            <li><a href="/" class="text-light"> TOP</a></li>
+                            <li><a href="/about" class="text-light"> Sanaviとは?</a></li>
+                            <li><a href="/place_post" class="text-light"><i class="fa fa-plus"></i> 施設投稿</a></li>
+                            <li><a href="/place_list" class="text-light"><i class="fa fa-list" aria-hidden="true"></i> 施設一覧</a></li>
+                            <li><a data-toggle="modal" data-target="#myModal" href="#myModal" class="text-light"><i
                                         class="fa fa-envelope-o"></i></a></li>
 
                             @guest
                                 @if (Route::has('login'))
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('login') }}">
+                                        <a class="nav-link text-light" href="{{ route('login') }}">
                                             <i class="fa fa-sign-in"></i> {{ __('ja.Login') }}
                                         </a>
                                     </li>
                                 @endif
                                 @if (Route::has('register'))
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('register') }}">
+                                        <a class="nav-link text-light" href="{{ route('register') }}">
                                             <i class="fa fa-user"></i> {{ __('ja.Assign') }}
                                         </a>
                                     </li>
@@ -88,7 +76,7 @@
                             @else
                                 <!-- ドロップダウンメニュー -->
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link" href="#" id="navbarDropdown" role="button"
+                                    <a class="nav-link text-light" href="#" id="navbarDropdown" role="button"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         {{ Auth::user()->name }} <span class="caret"></span>
                                     </a>

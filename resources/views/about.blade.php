@@ -3,7 +3,6 @@
 <title>Sanaviとは？ - Sanavi - サウナレビューサイト</title>
 
 @section('content')
-    <div id="blue">
         <div class="container">
             <div class="row centered">
                 <div class="col-lg-8 col-lg-offset-2">
@@ -15,5 +14,4 @@
                 </div>
             </div>
         </div>
-    </div>
 @endsection

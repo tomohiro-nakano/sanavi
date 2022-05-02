@@ -115,7 +115,12 @@ class PlacePostController extends Controller
         return redirect('/place_list');
     }
 
-
+    public function destroy(Request $request, PlacePost $place_post)
+    {
+        PlacePost::where('id', $place_post->id)->delete();
+        $request->session()->flash('delete', '施設情報を削除しました');
+        return redirect(url('/place_list'));
+    }
 
 
 

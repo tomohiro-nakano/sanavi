@@ -5450,7 +5450,18 @@ var app = new Vue({
   data: {
     rating: 3
   }
-}); // import StarRating from 'vue-star-rating';
+});
+
+function delete_alert(e) {
+  if (!window.confirm('本当に削除しますか？')) {
+    window.alert('キャンセルされました');
+    return false;
+  }
+
+  document.deleteform.submit();
+}
+
+; // import StarRating from 'vue-star-rating';
 // Vue.component('star-rating', StarRating);
 // const app = new vue({
 //     methods: {

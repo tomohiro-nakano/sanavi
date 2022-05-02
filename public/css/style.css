@@ -70,13 +70,19 @@ hr {
 }
 
 .navbar-inverse {
-  background: #2d2d2d;
-  border-color: #2d2d2d;
+    background: #1B9B6F;
+    border-color: #1B9B6F;
+
+    /* background: #2d2d2d; */
+    /* border-color: #2d2d2d; */
+  /* border-color: #0041B3; */
+  /* border-color: #46A2FF; */
 }
 
 .navbar-inverse .navbar-nav>.active>a {
   background: #ff7878
 }
+
 
 .navbar-inverse .navbar-brand {
   color: #999999;
@@ -510,7 +516,7 @@ hr {
 /* Copyrights */
 
 #copyrights {
-  background: #222222;
+  background: #1B9B6F;
   padding: 20px 0;
   text-align: center;
   color: #fff;
@@ -535,5 +541,6 @@ hr {
     height: auto;
 }
 
-
-
+.sanavi-green {
+    background-color: #1B9B6F;
+}
