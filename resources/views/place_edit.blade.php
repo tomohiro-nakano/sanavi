@@ -91,19 +91,6 @@
                 </a>
             </div>
         </div>
-        {{-- <div class="form-group col-3">
-            <div class="d-grid gap-2">
-                <form action="{{ url($place->id . '/place_edit') }}" method="post">
-                    {{ csrf_field() }}
-                    {{ method_field('DELETE') }}
-                    <button type="submit" class="btn btn-outline-secondary btn-lg">
-                        <i class="fa fa-trash"></i> 削 除
-                    </button>
-                </form>
-            </div>
-        </div> --}}
-
-
 
         <div class="form-group col-6">
             <div class="d-grid gap-2">

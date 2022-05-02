@@ -146,7 +146,7 @@
                        <td>{{ $post->visit_date }}</td>
                        <td>{{ $post->comment }}</td>
                        <td>
-                           <form action="{{ url($post->id . '/place_edit') }}" method="get">
+                           <form action="{{ url($post->id . '/post_edit') }}" method="get">
                                {{ csrf_field() }}
                                <button type="submit" class="btn btn-secondary">
                                    <i class="fa fa-pencil"></i> 編集
