@@ -1,25 +1,24 @@
+<title>Top - Sanavi - サウナレビューサイト</title>
+
 @extends('layouts.app')
 
 @section('title', '')
 
 @section('content')
 
-<div id="headerwrap">
-    <div class="container">
-      <div class="row centered">
-        <div class="col-lg-8 col-lg-offset-2">
-          <h1>Sanavi</h1>
-          <h2>sauna review site</h2>
+    <div id="headerwrap">
+        <div class="container">
+            <div class="row centered">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h1>Sanavi</h1>
+                    <h2>sauna review site</h2>
+                </div>
+            </div>
         </div>
-      </div>
-      <!-- row -->
     </div>
-    <!-- container -->
-  </div>
-  <!-- headerwrap -->
 
 
-    <div class="container w">
+    {{-- <div class="container w">
         <div class="row centered">
             <br><br>
             <div class="col-lg-4">
@@ -34,15 +33,15 @@
         </div>
         <br>
         <br>
-    </div>
+    </div> --}}
 
     {{-- logo --}}
-        <div class="container">
-            <div class="row centered">
-                <div class="col-lg-12">
-                        <a href="#" ><img src="img/logo/logo_transparent.png" class="top-logo"></a>
-                </div>
+    <div class="container">
+        <div class="row centered">
+            <div class="col-lg-12">
+                <a href="#"><img src="img/logo/logo_transparent.png" class="top-logo"></a>
             </div>
         </div>
+    </div>
 
 @endsection

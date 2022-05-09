@@ -44,16 +44,14 @@
             <!-- Fixed navbar -->
             <div class="navbar navbar-inverse navbar-fixed-top navbar-expand-md">
                 <div class="container">
-                    {{-- ロゴ表示 --}}
-                    <div class="tilt">
-                        <a href="/"><img src="img/logo/header_logo.png" id="header_logo"></a>
-                    </div>
+                    <a href="/"><img src="img/logo/header_logo.png" id="header_logo"></a>
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="/" class="text-light"> TOP</a></li>
                             <li><a href="/about" class="text-light"> Sanaviとは?</a></li>
                             <li><a href="/place_post" class="text-light"><i class="fa fa-plus"></i> 施設投稿</a></li>
-                            <li><a href="/place_list" class="text-light"><i class="fa fa-list" aria-hidden="true"></i> 施設一覧</a></li>
+                            <li><a href="/place_list" class="text-light"><i class="fa fa-list"
+                                        aria-hidden="true"></i> 施設一覧</a></li>
                             <li><a data-toggle="modal" data-target="#myModal" href="#myModal" class="text-light"><i
                                         class="fa fa-envelope-o"></i></a></li>
 
