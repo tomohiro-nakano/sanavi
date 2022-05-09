@@ -47,4 +47,4 @@ Route::group(['middleware' => 'auth'], function () { //ログイン認証しな�
 
 Auth::routes();
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+// Route::get('/home', [HomeController::class, 'index'])->name('home');
