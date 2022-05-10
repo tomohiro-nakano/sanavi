@@ -4076,6 +4076,7 @@ textarea.form-control-lg {
   flex-basis: 100%;
   flex-grow: 1;
   align-items: center;
+  font-size: 16px;
 }
 
 .navbar-toggler {
