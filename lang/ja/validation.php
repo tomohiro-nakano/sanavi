@@ -113,10 +113,12 @@ return [
     */
 
     'attributes' => [
-        'item_name' => '書籍名',
-        'item_purchase' => '購入数',
-        'item_amount' => '料金',
-        'published' => '販売日'
+        'place_name' => '施設名',
+        'room_temp' => '室温',
+        'water_temp' => '水温',
+        'price' => '料金',
+        'address' => '住所',
+        '' => '',
       ],
 
 
