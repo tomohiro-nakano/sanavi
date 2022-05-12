@@ -118,7 +118,8 @@ return [
         'water_temp' => '水温',
         'price' => '料金',
         'address' => '住所',
-        '' => '',
+        'visit_date' => '訪問日',
+        'comment' => '感想',
       ],
 
 

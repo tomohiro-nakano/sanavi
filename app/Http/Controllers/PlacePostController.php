@@ -55,6 +55,14 @@ class PlacePostController extends Controller
             'address' => 'required',
         ]);
 
+        if ($file = $request->place_image) {
+            $fileName = time() . $file->getClientOriginalName();
+            $target_path = public_path('img/place_image/');
+            $file->move($target_path, $fileName);
+        } else {
+            $fileName = "";
+        }
+
         if ($validator->fails()) {
             return redirect('/place_post')->withInput()->withErrors($validator);
         }
@@ -64,11 +72,11 @@ class PlacePostController extends Controller
         $place_post->water_temp       = $request->water_temp;
         $place_post->price   = $request->price;
         $place_post->address     = $request->address;
-        $place_post->place_image     = $request->place_image;
+        $place_post->place_image = $fileName;
         $place_post->save();
 
         $request->session()->flash('success', 'データを追加しました');
-        return redirect('/');
+        return redirect('/place_list');
     }
 
 

@@ -5476,6 +5476,10 @@ function delete_alert(e) {
 //   app.component('star-rating', VueStarRating.default)
 //   app.mount('#app')
 
+$('.custom-file-input').on('change', function () {
+  $(this).next('.custom-file-label').html($(this)[0].files[0].name);
+});
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":

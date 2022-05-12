@@ -549,3 +549,7 @@ hr {
     height: 300px;
     width: 300px;
 }
+
+.btn-cancel {
+    outline: 0.1rem solid;
+}

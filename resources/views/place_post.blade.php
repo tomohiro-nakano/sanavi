@@ -53,7 +53,7 @@
             </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-group col-md-12 col-xs-12">
             <label for="inputFile" class="input-group-text-2"><i class="fa fa-picture-o" aria-hidden="true"></i>　画像アップロード</label>
             <div class="custom-file">
                 <input type="file" class="custom-file-input" id="inputFile" name="place_image">
@@ -63,17 +63,9 @@
 
         <div class="form-group col-3">
             <div class="d-grid gap-2">
-                <a href="{{ url('/place_list') }}" class="btn btn-outline-secondary btn-lg">
+                <button href="{{ url('/place_list') }}" class="btn btn-outline-secondary btn-cancel btn-lg">
                     <i class="fa fa-mail-reply"></i>　キャンセル
-                </a>
-            </div>
-        </div>
-
-        <div class="form-group col-3">
-            <div class="d-grid gap-2">
-                <a href="{{ url('/place_list') }}" class="btn btn-outline-secondary btn-lg">
-                    <i class="fa fa-mail-reply"></i>　キャンセル
-                </a>
+                </button>
             </div>
         </div>
 

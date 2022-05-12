@@ -39,61 +39,6 @@
 </head>
 
 <body>
-    {{-- <div id="app">
-        <header class="gl-header">
-            <!-- Fixed navbar -->
-            <div class="navbar navbar-inverse navbar-fixed-top navbar-expand-md">
-                <div class="container">
-                    <a href="/"><img src="img/logo/header_logo.png" id="header_logo"></a>
-                    <div class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a href="/" class="text-light"> TOP</a></li>
-                            <li><a href="/about" class="text-light"> Sanaviとは?</a></li>
-                            <li><a href="/place_post" class="text-light"><i class="fa fa-plus"></i> 施設投稿</a></li>
-                            <li><a href="/place_list" class="text-light"><i class="fa fa-list"
-                                        aria-hidden="true"></i> 施設一覧</a></li>
-                            <li><a data-toggle="modal" data-target="#myModal" href="#myModal" class="text-light"><i
-                                        class="fa fa-envelope-o"></i></a></li>
-
-                            @guest
-                                @if (Route::has('login'))
-                                    <li class="nav-item">
-                                        <a class="nav-link text-light" href="{{ route('login') }}">
-                                            <i class="fa fa-sign-in"></i> {{ __('ja.Login') }}
-                                        </a>
-                                    </li>
-                                @endif
-                                @if (Route::has('register'))
-                                    <li class="nav-item">
-                                        <a class="nav-link text-light" href="{{ route('register') }}">
-                                            <i class="fa fa-user"></i> {{ __('ja.Assign') }}
-                                        </a>
-                                    </li>
-                                @endif
-                                <!-- ログイン済みユーザ -->
-                            @else
-                                <!-- ドロップダウンメニュー -->
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link text-light" href="#" id="navbarDropdown" role="button"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        {{ Auth::user()->name }} <span class="caret"></span>
-                                    </a>
-                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="{{ route('logout') }}"
-                                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                            <i class="fa fa-sign-out"></i> {{ __('ja.Logout') }}
-                                        </a>
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                            class="d-none"> @csrf </form>
-                                </li>
-                            @endguest
-                        </ul>
-                    </div>
-                    <!--/.nav-collapse -->
-                </div>
-            </div> --}}
-
-
     <div id="app">
         <header class="gl-header">
             <!-- Fixed navbar -->
@@ -157,50 +102,7 @@
                     </div>
                 </div>
             </nav>
-
-
-            {{-- <!-- ナビゲーションバー -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-        <a href="/"><img src="img/logo/header_logo.png" id="header_logo"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-                <a href="/" class="nav-link"> TOP <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Features</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Pricing</a>
-            </li>
-            <!-- ドロップダウンタイプ -->
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropdown link
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">About us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </nav> --}}
         </header>
-
-
-
         <main class="container">
             <div class="card">
                 <h2 class="display-5 card-title text-center mt-4">@yield('title')</h2>
