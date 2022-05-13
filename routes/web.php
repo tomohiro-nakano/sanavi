@@ -19,16 +19,18 @@ use Illuminate\http\Request;
 use Illuminate\http\Response;
 
 
+Route::get('/', [PlacePostController::class, 'top']);
+Route::get('/place_list', [PlacePostController::class, 'index']);
+// Route::get('/place_list/{place}/detail', [PlacePostController::class, 'detail']);
+Route::get('/detail/{place}', [PlacePostController::class, 'detail']);
+Route::get('/about', [PlacePostController::class, 'about']);
+Route::get('/about/test', [PlacePostController::class, 'test']);
 Route::group(['middleware' => 'auth'], function () { //ログイン認証しないとアクセス制限
-    Route::get('/', [PlacePostController::class, 'top']);
-    Route::get('/place_list', [PlacePostController::class, 'index']);
-    Route::get('/place_list/{place}/detail', [PlacePostController::class, 'detail']);
     Route::get('/place_post', [PlacePostController::class, 'place_post']);
     Route::post('/place_post', [PlacePostController::class, 'place_post_store']);
     Route::get('/{place}/place_edit', [PlacePostController::class, 'place_edit']);
     Route::put('/place_edit/{place_post}', [PlacePostController::class, 'update']);
     Route::delete('/{place_post}/place_edit', [PlacePostController::class, 'destroy']);
-    Route::get('/about', [PlacePostController::class, 'about']);
 
     Route::get('/{place}/post', [PostController::class, 'post']);
     Route::post('{place}/post', [PostController::class, 'post_store']);

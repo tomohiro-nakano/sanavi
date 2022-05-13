@@ -38,7 +38,8 @@
                         <td><img class="place-img-list" src='img/place_image/no_image.png'></td>
                     @endif
                     <td><a class="text-dark"
-                            href="{{ url('/place_list/' . $place_list->id . '/detail') }}">{{ $place_list->place_name }}</a>
+                            {{-- href="{{ url('/place_list/' . $place_list->id . '/detail') }}">{{ $place_list->place_name }}</a> --}}
+                            href="{{ url('/detail/' . $place_list->id) }}">{{ $place_list->place_name }}</a>
                     </td>
                     <td>{{ $place_list->room_temp }}℃</td>
                     <td>{{ $place_list->water_temp }}℃</td>

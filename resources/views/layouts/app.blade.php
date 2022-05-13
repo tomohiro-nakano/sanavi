@@ -10,29 +10,30 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link rel="dns-prefetch" href="{{ asset('//fonts.gstatic.com') }}">
+    <link href="{{ asset('https://fonts.googleapis.com/css?family=Nunito') }}" rel="stylesheet">
     <!-- Styles -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css') }}">
+    <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
 
     {{-- 追加内容 --}}
     <!-- Favicons -->
-    <link href="img/favicon_sauna.png" rel="icon">
-    <link href="img/favicon_sauna.png" rel="apple-touch-icon">
+    <link href="{{ asset('img/favicon_sauna.png') }}" rel="icon">
+    <link href="{{ asset('img/favicon_sauna.png') }}" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900|Raleway:400,300,700,900" rel="stylesheet">
+    <link href="{{ asset('https://fonts.googleapis.com/css?family=Lato:300,400,700,900|Raleway:400,300,700,900') }}" rel="stylesheet">
 
     <!-- Bootstrap CSS File -->
-    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ asset('lib/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
 
     <!-- Libraries CSS Files -->
-    <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="{{ asset('lib/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
 
     <!-- Main Stylesheet File -->
-    <link href="css/style.css" rel="stylesheet">
+    {{-- <link href="css/style.css" rel="stylesheet"> --}}
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
 
 
@@ -45,7 +46,7 @@
             <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
                 <div class="navbar navbar-inverse navbar-fixed-top navbar-expand-md">
                     <div class="container">
-                        <a href="/"><img src="img/logo/header_logo.png" id="header_logo"></a>
+                        <a href="/"><img src="{{ asset('img/logo/header_logo.png') }}" id="header_logo"></a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse"
                             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Toggle navigation">

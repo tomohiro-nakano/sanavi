@@ -14,4 +14,6 @@
                 </div>
             </div>
         </div>
+
+        <a href="/about/test">test</a>
 @endsection
