@@ -1,8 +1,3 @@
-<script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.js"></script>
-<script>
-    bsCustomFileInput.init();
-</script>
-
 @extends('layouts.app')
 
 @section('title', '施設編集')
@@ -13,6 +8,7 @@
         {{ method_field('PUT') }}
         {{ csrf_field() }}
         <input type='hidden' name='user_id' value="{{ Auth::user()->id }}">
+        <input type='hidden' name='place_image_name' value="{{ old('place_image', isset($place->place_image) ? $place->place_image : '') }}">
 
         @include('common.errors')
         <div class="form-group col-md-6 col-xs-12">
@@ -115,16 +111,6 @@
             </form>
         </div>
     </div>
-
-
-    <script>
-        bsCustomFileInput.init();
-        document.getElementById('inputFileReset').addEventListener('click', function() {
-            var elem = document.getElementById('inputFile');
-            elem.value = '';
-            elem.dispatchEvent(new Event('change'));
-        });
-    </script>
 
 @endsection
 

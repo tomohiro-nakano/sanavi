@@ -5479,6 +5479,52 @@ function delete_alert(e) {
 $('.custom-file-input').on('change', function () {
   $(this).next('.custom-file-label').html($(this)[0].files[0].name);
 });
+'use strict';
+
+var fontSizeAdjuster = function () {
+  var lowerLimit = 10;
+  return {
+    adjust: function adjust(e, ls, p) {
+      e.style.fontSize = p.defaultFontSize + 'px';
+      if (ls < 1) ls = 1;
+
+      for (var i = p.defaultFontSize; i >= ls; i /= 1.02) {
+        if (e.scrollWidth <= p.defaultScrollWidth) {
+          break;
+        }
+
+        e.style.fontSize = i + 'px';
+      }
+    },
+    set: function set(e, ls) {
+      if (e === undefined || e.tagName !== 'INPUT' || e.type !== 'text') {
+        return;
+      }
+
+      if (isNaN(ls)) {
+        ls = lowerLimit;
+      }
+
+      var v = e.value;
+      e.value = '';
+      var cs = window.getComputedStyle(e);
+      var p = {};
+      p.defaultFontSize = parseFloat(cs.fontSize);
+      p.defaultScrollWidth = e.scrollWidth;
+      e.style.height = cs.height;
+      e.style.width = cs.width;
+      e.style.padding = cs.padding;
+      e.value = v;
+      var a = this.adjust;
+      a(e, ls, p);
+      e.addEventListener('input', function () {
+        a(e, ls, p);
+      });
+    }
+  };
+}();
+
+fontSizeAdjuster.set(document.getElementById('inputFile'), 20);
 
 /***/ }),
 

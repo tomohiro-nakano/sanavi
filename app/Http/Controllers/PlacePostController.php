@@ -99,10 +99,15 @@ class PlacePostController extends Controller
             'address' => 'required',
         ]);
 
+        Log::debug($request->place_image); //ログ出力（変数）
+        Log::debug($request->place_image_name); //ログ出力（変数）
+        Log::debug(print_r($request->place_image, true)); //ログ出力（配列）
         if ($file = $request->place_image) {
             $fileName = time() . $file->getClientOriginalName();
             $target_path = public_path('img/place_image/');
             $file->move($target_path, $fileName);
+        } elseif ($request->place_image_name) {
+            $fileName = $request->place_image_name;
         } else {
             $fileName = "";
         }

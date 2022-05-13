@@ -57,20 +57,20 @@
             <label for="inputFile" class="input-group-text-2"><i class="fa fa-picture-o" aria-hidden="true"></i>　画像アップロード</label>
             <div class="custom-file">
                 <input type="file" class="custom-file-input" id="inputFile" name="place_image">
-                <label class="custom-file-label" for="inputFile" data-browse="選択">ファイルを選択(ここにドロップすることもできます)</label>
+                <label class="custom-file-label" for="inputFile" id="test2" data-browse="選択">ファイルを選択(ドロップできます)</label>
             </div>
         </div>
 
-        <div class="form-group col-3">
+        <div class="form-group col-md-3 col-xs-12">
             <div class="d-grid gap-2">
-                <button href="{{ url('/place_list') }}" class="btn btn-outline-secondary btn-cancel btn-lg">
+                <a href="{{ url('/place_list') }}" class="btn btn-outline-secondary btn-cancel btn-lg">
                     <i class="fa fa-mail-reply"></i>　キャンセル
-                </button>
+                </a>
             </div>
         </div>
 
 
-        <div class="form-group col-9">
+        <div class="form-group col-md-9 col-xs-12">
             <div class="d-grid gap-2">
                 <button type="submit" class="btn btn-secondary btn-lg">
                     <i class="fa fa-chevron-right"></i>　送 信
@@ -78,5 +78,8 @@
             </div>
         </div>
     </form>
+<script>
 
+    fontSizeAdjuster.set(document.getElementById('test2'), 20);
+</script>
 @endsection
