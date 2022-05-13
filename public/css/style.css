@@ -568,3 +568,13 @@ hr {
     border: 1px solid #ced4da;
     border-radius: 0.25rem;
   }
+
+  .place-img {
+    width: 350px;
+    height: auto;
+    margin: 8px;
+  }
+
+  .delete-button {
+      margin-left: -15px;
+  }
