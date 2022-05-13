@@ -17,6 +17,12 @@
         </div>
     </div>
 
+    @if (Auth::check() == false)
+        </h2>
+        まずはログイン
+        <h2>
+    @endif
+
     {{-- logo --}}
     <div class="container">
         <div class="row centered">

@@ -550,7 +550,21 @@ hr {
     width: 300px;
 }
 
-.btn-cancel {
+.btn-outline {
     outline: 0.1rem solid;
 }
 
+.input-group-text-2 {
+    display: flex;
+    align-items: center;
+    padding: 0.375rem 0.75rem;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #212529;
+    text-align: center;
+    white-space: nowrap;
+    background-color: #e9ecef;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+  }

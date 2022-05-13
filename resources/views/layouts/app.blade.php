@@ -61,8 +61,8 @@
                                 </li>
                                 <li><a href="/place_list" class="text-light"><i class="fa fa-list"
                                             aria-hidden="true"></i> 施設一覧</a></li>
-                                <li><a data-toggle="modal" data-target="#myModal" href="#myModal"
-                                        class="text-light"><i class="fa fa-envelope-o"></i></a></li>
+                                {{-- <li><a data-toggle="modal" data-target="#myModal" href="#myModal"
+                                        class="text-light"><i class="fa fa-envelope-o"></i></a></li> --}}
 
                                 @guest
                                     @if (Route::has('login'))

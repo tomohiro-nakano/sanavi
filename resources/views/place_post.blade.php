@@ -63,7 +63,7 @@
 
         <div class="form-group col-md-3 col-xs-12">
             <div class="d-grid gap-2">
-                <a href="{{ url('/place_list') }}" class="btn btn-outline-secondary btn-cancel btn-lg">
+                <a href="{{ url('/place_list') }}" class="btn btn-outline-secondary btn-outline btn-lg">
                     <i class="fa fa-mail-reply"></i>　キャンセル
                 </a>
             </div>
