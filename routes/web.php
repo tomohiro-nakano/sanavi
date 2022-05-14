@@ -36,7 +36,7 @@ Route::group(['middleware' => 'auth'], function () { //ログイン認証しな�
     Route::post('{place}/post', [PostController::class, 'post_store']);
     Route::get('/{post}/post_edit', [PostController::class, 'post_edit']);
     Route::put('/post_edit/{post}', [PostController::class, 'update']);
-    Route::delete('/place_list/{post}/detail', [PostController::class, 'destroy']);
+    Route::delete('/detail/{post}', [PostController::class, 'destroy']);
     // Route::delete('/detail/{place}', [PostController::class, 'destroy']);
 
     Route::get('/sanavi', [SanaviController::class, 'create']);

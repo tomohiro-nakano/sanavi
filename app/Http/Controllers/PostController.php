@@ -53,7 +53,7 @@ class PostController extends Controller
         $post->save();
 
         $request->session()->flash('success', 'データを追加しました');
-        return redirect(url('/place_list/' . $request->place_id . '/detail'));
+        return redirect(url('/detail/'  . $request->place_id));
     }
 
     public function post_edit(Post $post)
@@ -107,6 +107,6 @@ class PostController extends Controller
         Post::where('id', $post->id)->delete();
         $request->session()->flash('delete', 'サ活投稿を削除しました');
         // return redirect(url('/place_list'));
-        return redirect(url('/place_list/' . $post->place_id . '/detail'));
+        return redirect(url('/detail/' . $post->place_id));
     }
 }

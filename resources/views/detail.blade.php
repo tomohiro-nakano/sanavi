@@ -155,7 +155,7 @@
                             </form>
                         </td>
                         <td>
-                            <form action="{{ url('/place_list/' . $post->id . '/detail') }}" method="post">
+                            <form action="{{ url('/detail/' . $post->id) }}" method="post">
                                 {{ csrf_field() }}
                                 {{ method_field('DELETE') }}
                                 <button type="submit" class="btn btn-secondary">

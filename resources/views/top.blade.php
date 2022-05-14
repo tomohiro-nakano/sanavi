@@ -18,9 +18,16 @@
     </div>
 
     @if (Auth::check() == false)
-        </h2>
-        まずはログイン
-        <h2>
+        <div class="card text-center">
+            <div class="card-header">
+
+            </div>
+            <div class="card-body">
+                <h3 class="card-title">まずはログインまたは、ユーザ登録をしましょう</h3>
+                <a href="{{ route('login') }}" class="btn btn-primary btn-lg">ログイン</a>
+                <a href="{{ route('register') }}" class="btn btn-primary btn-lg">新規ユーザ登録</a>
+            </div>
+        </div>
     @endif
 
     {{-- logo --}}
