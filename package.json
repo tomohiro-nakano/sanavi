@@ -24,6 +24,7 @@
         "vue-template-compiler": "^2.6.12"
     },
     "dependencies": {
+        "scroll-hint": "^1.2.5",
         "vue-star-rating": "^1.7.0"
     }
 }

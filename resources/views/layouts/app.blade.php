@@ -13,8 +13,10 @@
     <link rel="dns-prefetch" href="{{ asset('//fonts.gstatic.com') }}">
     <link href="{{ asset('https://fonts.googleapis.com/css?family=Nunito') }}" rel="stylesheet">
     <!-- Styles -->
-    <link rel="stylesheet" href="{{ asset('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css') }}">
+    <link rel="stylesheet"
+        href="{{ asset('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css') }}">
+    <link rel="stylesheet"
+        href="{{ asset('https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css') }}">
     <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
 
     {{-- 追加内容 --}}
@@ -23,7 +25,8 @@
     <link href="{{ asset('img/favicon_sauna.png') }}" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
-    <link href="{{ asset('https://fonts.googleapis.com/css?family=Lato:300,400,700,900|Raleway:400,300,700,900') }}" rel="stylesheet">
+    <link href="{{ asset('https://fonts.googleapis.com/css?family=Lato:300,400,700,900|Raleway:400,300,700,900') }}"
+        rel="stylesheet">
 
     <!-- Bootstrap CSS File -->
     <link href="{{ asset('lib/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -35,6 +38,8 @@
     {{-- <link href="css/style.css" rel="stylesheet"> --}}
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://unpkg.com/scroll-hint@1.1.10/css/scroll-hint.css">
+    <link rel="stylesheet" href="scroll-hint.css">
 
 
 </head>

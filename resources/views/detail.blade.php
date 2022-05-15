@@ -139,6 +139,7 @@
                 @foreach ($posts as $post)
                     <tr>
                         <td>{{ $post->user_name }}</td>
+                        <star-rating :rating="3.8" :read-only="true" :increment="0.01"></star-rating>
                         <td>{{ $post->all_score }}点</td>
                         <td>{{ $post->rt_score }}点</td>
                         <td>{{ $post->wt_score }}点</td>
@@ -183,4 +184,5 @@
             </a>
         </div>
     </div>
+
 @endsection
