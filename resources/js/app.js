@@ -13,6 +13,18 @@ Vue.component(
     require("./components/ExampleComponent.vue").default
 );
 
+// スクロールヒント
+import ScrollHint from 'scroll-hint';
+// const ScrollHint = require('scroll-hint');
+new ScrollHint(".js-scrollable", {
+    suggestiveShadow: true,
+    remainingTime: 5000,
+    i18n: {
+        scrollable: "スクロールできます",
+    },
+});
+
+
 // スターレーティングを各項目別に生成
 import StarRating from "vue-star-rating";
 
@@ -133,15 +145,4 @@ function delete_alert(e) {
 
 $(".custom-file-input").on("change", function () {
     $(this).next(".custom-file-label").html($(this)[0].files[0].name);
-});
-
-// スクロールヒント
-// import ScrollHint from 'scroll-hint';
-// const ScrollHint = require('scroll-hint');
-new ScrollHint(".js-scrollable", {
-    suggestiveShadow: true,
-    remainingTime: 5000,
-    i18n: {
-        scrollable: "スクロールできます",
-    },
 });

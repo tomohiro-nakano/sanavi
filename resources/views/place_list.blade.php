@@ -33,7 +33,7 @@
                         <th class="tr-room-temp">@sortablelink('room_temp', '室 温')</th>
                         <th class="tr-water-temp">@sortablelink('water_temp', '水 温')</th>
                         <th class="tr-price">@sortablelink('price', '料 金')</th>
-                        <th>住 所</th>
+                        <th class="tr-address">住 所</th>
                         <th></th>
                     </tr>
 
@@ -53,7 +53,7 @@
                             <td>{{ $place_list->room_temp }}℃</td>
                             <td>{{ $place_list->water_temp }}℃</td>
                             <td>{{ number_format($place_list->price) }}円</td>
-                            <td>{{ $place_list->address }}</td>
+                            <td class="td-address">{{ $place_list->address }}</td>
                             <td>
                                 <form action="{{ url($place_list->id . '/place_edit') }}" method="get">
                                     {{ csrf_field() }}

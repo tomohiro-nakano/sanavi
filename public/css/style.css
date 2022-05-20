@@ -640,6 +640,16 @@ hr {
     color: #FFF;
 }
 
+.tr-address {
+    width: 350px;
+    text-align: center;
+}
+
+.td-address {
+    /* table-layout: fixed; */
+    /* word-break : break-all;
+    overflow-wrap : break-word; */
+}
 
 .scroll-table {
     /* overflow: auto; */
