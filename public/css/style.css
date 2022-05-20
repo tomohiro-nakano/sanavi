@@ -645,11 +645,11 @@ hr {
     text-align: center;
 }
 
-.td-address {
-    /* table-layout: fixed; */
-    /* word-break : break-all;
-    overflow-wrap : break-word; */
-}
+/* .td-address {
+    table-layout: fixed;
+    word-break : break-all;
+    overflow-wrap : break-word;
+} */
 
 .scroll-table {
     /* overflow: auto; */
