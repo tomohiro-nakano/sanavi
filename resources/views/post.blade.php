@@ -20,45 +20,53 @@
                 </div>
             </div>
         </div>
-        <div id="star">
+        {{-- <div id="star"> --}}
+        <div id="star-all">
             <div class="container">
                 <div class="form-group col-md-6 col-xs-12">
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <div class="input-group-text-2"><i class="fa fa-star-half-o" aria-hidden="true"></i>　総合評価</div>
                         </div>
-                        <star-rating :star-size="25" :increment="0.5" text-class="custom-text" :rating="3.0"
-                            :round-start-rating="false" @rating-selected="setRating" class="form-control bg-light"></star-rating>
+                        <star-all :star-size="25" :increment="0.5" text-class="custom-text"
+                            :rating="3.0" :round-start-rating="false" @rating-selected="setRating"
+                            class="form-control bg-light"></star-all>
                         <input type="hidden" name="all_score" :value="this.rating" />
                     </div>
                 </div>
             </div>
+        </div>
+        <div id="star-totonoi">
             <div class="container">
                 <div class="form-group col-md-6 col-xs-12">
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <div class="input-group-text-2"><i class="fa fa-star-half-o" aria-hidden="true"></i>　ととのい度</div>
                         </div>
-                            <star-rating :star-size="25" :increment="0.5" text-class="custom-text" :rating="3.0"
-                                :round-start-rating="false" @rating-selected="setRating" class="form-control bg-light"></star-rating>
-                            <input type="hidden" name="totonoi_score" :value="this.rating" />
+                        <star-totonoi :star-size="25" :increment="0.5" text-class="custom-text"
+                            :rating="3.0" :round-start-rating="false" @rating-selected="setRating"
+                            class="form-control bg-light"></star-totonoi>
+                        <input type="hidden" name="totonoi_score" :value="this.rating" />
                     </div>
                 </div>
             </div>
+        </div>
+        <div id="star-rt">
             <div class="container">
                 <div class="form-group col-md-6 col-xs-12">
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <div class="input-group-text-2"><i class="fa fa-star-half-o" aria-hidden="true"></i>　温度評価</div>
                         </div>
-                        <div id="rt">
-                            <star-rating :star-size="25" :increment="0.5" text-class="custom-text" :rating="3.0"
-                                :round-start-rating="false" class="form-control bg-light"></star-rating>
-                            <input type="hidden" name="rt_score" :value="this.rating" />
-                        </div>
+                        <star-rt :star-size="25" :increment="0.5" text-class="custom-text"
+                            :rating="3.0" :round-start-rating="false" @rating-selected="setRating"
+                            class="form-control bg-light"></star-rt>
+                        <input type="hidden" name="rt_score" :value="this.rating" />
                     </div>
                 </div>
             </div>
+        </div>
+        <div id="star-wt">
             <div class="container">
                 <div class="form-group col-md-6 col-xs-12">
                     <div class="input-group">
@@ -66,27 +74,36 @@
                             <div class="input-group-text-2"><i class="fa fa-star-half-o" aria-hidden="true"></i>　水風呂評価</div>
                         </div>
                         <div>
-                            <star-rating :star-size="25" :increment="0.5" text-class="custom-text" :rating="3.0"
-                                :round-start-rating="false" class="form-control bg-light"></star-rating>
+                            <star-wt :star-size="25" :increment="0.5" text-class="custom-text"
+                                :rating="3.0" :round-start-rating="false" @rating-selected="setRating"
+                                class="form-control bg-light">
+                            </star-wt>
                             <input type="hidden" name="wt_score" :value="this.rating" />
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+        <div id="star-rest">
             <div class="container">
                 <div class="form-group col-md-6 col-xs-12">
                     <div class="input-group">
                         <div class="input-group-prepend">
-                            <div class="input-group-text-2"><i class="fa fa-star-half-o" aria-hidden="true"></i>　外気浴（休憩）評価</div>
+                            <div class="input-group-text-2"><i class="fa fa-star-half-o" aria-hidden="true"></i>　外気浴（休憩）評価
+                            </div>
                         </div>
                         <div>
-                            <star-rating :star-size="25" :increment="0.5" text-class="custom-text" :rating="3.0"
-                                :round-start-rating="false" class="form-control bg-light"></star-rating>
+                            <star-rest :star-size="25" :increment="0.5" text-class="custom-text"
+                                :rating="3.0" :round-start-rating="false" @rating-selected="setRating"
+                                class="form-control bg-light">
+                            </star-rest>
                             <input type="hidden" name="rest_score" :value="this.rating" />
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+        <div id="star-cong">
             <div class="container">
                 <div class="form-group col-md-6 col-xs-12">
                     <div class="input-group">
@@ -94,14 +111,17 @@
                             <div class="input-group-text-2"><i class="fa fa-star-half-o" aria-hidden="true"></i>　混 雑 度</div>
                         </div>
                         <div>
-                            <star-rating :star-size="25" :increment="0.5" text-class="custom-text" :rating="3.0"
-                                :round-start-rating="false" class="form-control bg-light"></star-rating>
+                            <star-cong :star-size="25" :increment="0.5" text-class="custom-text"
+                                :rating="3.0" :round-start-rating="false" @rating-selected="setRating"
+                                class="form-control bg-light">
+                            </star-cong>
                             <input type="hidden" name="cong_score" :value="this.rating" />
                         </div>
                     </div>
                 </div>
-                        </div>
             </div>
+        </div>
+        {{-- </div> --}}
         <div class="container">
             <div class="form-group col-md-6 col-xs-12">
                 <div class="input-group">

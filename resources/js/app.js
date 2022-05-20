@@ -4,73 +4,119 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
+require("./bootstrap");
 
-window.Vue = require('vue').default;
+window.Vue = require("vue").default;
 
-/**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
+Vue.component(
+    "example-component",
+    require("./components/ExampleComponent.vue").default
+);
 
-// const files = require.context('./', true, /\.vue$/i)
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
+// スターレーティングを各項目別に生成
+import StarRating from "vue-star-rating";
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
-
-// const app = new Vue({
-//     el: '#app',
-// });
-
-// import StarRating from 'vue-star-rating'
-// Vue.component('star-rating', StarRating);
-// const app = new Vue({
-//     el: '#star',
-//     data: {
-//         rating: 0
-//     }
-// });
-
-import StarRating from 'vue-star-rating'
-Vue.component('star-rating', StarRating);
-const app = new Vue({
-    el: '#app',
+new Vue({
+    el: "#star-all",
+    components: {
+        "star-all": StarRating,
+    },
     methods: {
-      setRating: function(rating){
-        this.rating= rating;
-      }
+        setRating: function (rating) {
+            this.rating = rating;
+        },
     },
     data: {
-      rating: 3
-    }
+        rating: 3,
+    },
 });
 
+new Vue({
+    el: "#star-totonoi",
+    components: {
+        "star-totonoi": StarRating,
+    },
+    methods: {
+        setRating: function (rating) {
+            this.rating = rating;
+        },
+    },
+    data: {
+        rating: 3,
+    },
+});
 
-function delete_alert(e){
-    if(!window.confirm('本当に削除しますか？')){
-       window.alert('キャンセルされました');
-       return false;
+new Vue({
+    el: "#star-rt",
+    components: {
+        "star-rt": StarRating,
+    },
+    methods: {
+        setRating: function (rating) {
+            this.rating = rating;
+        },
+    },
+    data: {
+        rating: 3,
+    },
+});
+
+new Vue({
+    el: "#star-wt",
+    components: {
+        "star-wt": StarRating,
+    },
+    methods: {
+        setRating: function (rating) {
+            this.rating = rating;
+        },
+    },
+    data: {
+        rating: 3,
+    },
+});
+
+new Vue({
+    el: "#star-rest",
+    components: {
+        "star-rest": StarRating,
+    },
+    methods: {
+        setRating: function (rating) {
+            this.rating = rating;
+        },
+    },
+    data: {
+        rating: 3,
+    },
+});
+
+new Vue({
+    el: "#star-cong",
+    components: {
+        "star-cong": StarRating,
+    },
+    methods: {
+        setRating: function (rating) {
+            this.rating = rating;
+        },
+    },
+    data: {
+        rating: 3,
+    },
+});
+
+function delete_alert(e) {
+    if (!window.confirm("本当に削除しますか？")) {
+        window.alert("キャンセルされました");
+        return false;
     }
     document.deleteform.submit();
-};
-
-
-
-
+}
 
 // import StarRating from 'vue-star-rating';
 
 // Vue.component('star-rating', StarRating);
-
 
 // const app = new vue({
 //     methods: {
@@ -85,18 +131,17 @@ function delete_alert(e){
 //   app.component('star-rating', VueStarRating.default)
 //   app.mount('#app')
 
+$(".custom-file-input").on("change", function () {
+    $(this).next(".custom-file-label").html($(this)[0].files[0].name);
+});
 
-
-$('.custom-file-input').on('change',function(){
-    $(this).next('.custom-file-label').html($(this)[0].files[0].name);
-  })
-
+// スクロールヒント
 // import ScrollHint from 'scroll-hint';
 // const ScrollHint = require('scroll-hint');
-  new ScrollHint('.js-scrollable', {
+new ScrollHint(".js-scrollable", {
     suggestiveShadow: true,
     remainingTime: 5000,
     i18n: {
-      scrollable: 'スクロールできます',
+        scrollable: "スクロールできます",
     },
-  });
+});
