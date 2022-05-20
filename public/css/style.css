@@ -640,19 +640,9 @@ hr {
     color: #FFF;
 }
 
-.tr-address {
-    width: 50px;
-    text-align: center;
-}
-
-.td-address {
-    width: 50px;
-    word-break : break-all;
-    overflow-wrap : break-word;
-}
 
 .scroll-table {
-    overflow: auto;
+    /* overflow: auto; */
     white-space: nowrap;
 }
 
