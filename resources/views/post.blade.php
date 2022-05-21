@@ -10,17 +10,18 @@
         <input type='hidden' name='place_id' value="{{ $place->id }}">
         @include('common.errors')
 
-        <div class="container">
-            <div class="form-group col-md-6 col-xs-12">
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <div class="input-group-text-2"><i class="fa fa-check-square-o" aria-hidden="true"></i>　施 設 名</div>
+        <div>
+            <div class="container">
+                <div class="form-group col-md-6 col-xs-12">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text-2"><i class="fa fa-check-square-o" aria-hidden="true"></i>　施 設 名</div>
+                        </div>
+                        <input disabled class="form-control bg-light" style="font-size:16px" value="{{ $place->place_name }}">
                     </div>
-                    <input disabled class="form-control bg-light" style="font-size:16px" value="{{ $place->place_name }}">
                 </div>
             </div>
         </div>
-        {{-- <div id="star"> --}}
         <div id="star-all">
             <div class="container">
                 <div class="form-group col-md-6 col-xs-12">
@@ -121,41 +122,46 @@
                 </div>
             </div>
         </div>
-        {{-- </div> --}}
-        <div class="container">
-            <div class="form-group col-md-6 col-xs-12">
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <div class="input-group-text-2"><i class="fa fa-calendar-o"></i>　訪 問 日</div>
+        <div>
+            <div class="container">
+                <div class="form-group col-md-6 col-xs-12">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text-2"><i class="fa fa-calendar-o"></i>　訪 問 日</div>
+                        </div>
+                        <input type="date" name="visit_date" class="form-control datetimepicker-input"
+                            value="{{ old('visit_date') }}" id="datetimepicker" data-toggle="datetimepicker"
+                            data-target="#datetimepicker">
                     </div>
-                    <input type="date" name="visit_date" class="form-control datetimepicker-input"
-                        value="{{ old('visit_date') }}" id="datetimepicker" data-toggle="datetimepicker"
-                        data-target="#datetimepicker">
                 </div>
             </div>
         </div>
-        <div class="container">
-            <div class="form-group col-md-6 col-xs-12">
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <div class="input-group-text-2"><i class="fa fa-commenting-o" aria-hidden="true"></i>　感　想</div>
+        <div>
+            <div class="container">
+                <div class="form-group col-md-6 col-xs-12">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text-2"><i class="fa fa-commenting-o" aria-hidden="true"></i>　感　想</div>
+                        </div>
+                        <textarea name="comment" cols="100" rows="5"></textarea>
                     </div>
-                    <textarea name="comment" cols="100" rows="5"></textarea>
                 </div>
             </div>
         </div>
-        <div class="form-group col-md-3 col-xs-12">
-            <div class="d-grid gap-2">
-                <a href="{{ url('/detail/' . $place->id) }}" class="btn btn-outline-secondary btn-outline btn-lg">
-                    <i class="fa fa-mail-reply"></i>　キャンセル
-                </a>
+        <div class="post-button">
+            <div class="form-group col-md-3 col-xs-12">
+                <div class="d-grid gap-2">
+                    <a href="{{ url('/detail/' . $place->id) }}" class="btn btn-outline-secondary btn-outline btn-lg">
+                        <i class="fa fa-mail-reply"></i>　キャンセル
+                    </a>
+                </div>
             </div>
-        </div>
-        <div class="form-group col-md-6 col-xs-12">
-            <div class="d-grid gap-2">
-                <button type="submit" class="btn btn-secondary btn-lg">
-                    <i class="fa fa-chevron-right"></i>　送 信
-                </button>
+            <div class="form-group col-md-6 col-xs-12">
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-secondary btn-lg">
+                        <i class="fa fa-chevron-right"></i>　送 信
+                    </button>
+                </div>
             </div>
         </div>
     </form>

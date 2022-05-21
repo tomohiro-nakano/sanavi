@@ -69,7 +69,6 @@
                     <tr>
                         <td colspan="7" class="bg-light pb-0">
                             {{ $place_lists->appends(request()->query())->links() }}
-                            {{-- {{ $test_forms->appends(request()->query())->links() }} --}}
                         </td>
                     </tr>
                 </tfoot>

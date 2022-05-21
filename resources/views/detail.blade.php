@@ -131,16 +131,71 @@
                     <th>室温評価</th>
                     <th>水温評価</th>
                     <th>外気浴（休憩）評価</th>
+                    <th>混雑度</th>
                     <th>訪問日</th>
                     <th>感想</th>
                     <th>編集</th>
                     <th>削除</th>
                 </tr>
-                @foreach ($posts as $post)
+
+                {{-- <td>
+                    <div id="star-read">
+                        <star-read :rating="{{ posts }}" :read-only="true" :increment="0.01">
+                        </star-read>
+                    </div>
+                </td> --}}
+
+                {{-- :posts="@json({{ $posts }})" --}}
+
+
+
+
+
+
+                {{-- @foreach ($posts as $post)
                     <tr>
                         <td>{{ $post->user_name }}</td>
-                        <star-rating :rating="3.8" :read-only="true" :increment="0.01"></star-rating>
+
+                        <td id="star-all">
+                            <star-all :rating="{{ $post->all_score }}" :read-only="true" :increment="0.01">
+                            </star-all>
+                        </td>
+                        <td>
+                            <div id="star-totonoi">
+                                <star-totonoi :rating="{{ $post->totonoi_score }}" :read-only="true"
+                                    :increment="0.01"></star-totonoi>
+                            </div>
+                        </td>
+                        <td>
+                            <div id="star-rt">
+                                <star-rt :rating="{{ $post->rt_score }}" :read-only="true"
+                                    :increment="0.01"></star-rt>
+                            </div>
+                        </td>
+                        <td>
+                            <div id="star-wt">
+                                <star-wt :rating="{{ $post->wt_score }}" :read-only="true"
+                                    :increment="0.01"></star-wt>
+                            </div>
+                        </td>
+                        <td>
+                            <div id="star-rest">
+                                <star-rest :rating="{{ $post->rest_score }}" :read-only="true"
+                                    :increment="0.01"></star-rest>
+                            </div>
+                        </td>
+                        <td>
+                            <div id="star-cong">
+                                <star-cong :rating="{{ $post->cong_score }}" :read-only="true"
+                                    :increment="0.01"></star-cong>
+                            </div>
+                        </td>
+
+
+
+
                         <td>{{ $post->all_score }}点</td>
+                        <td>{{ $post->totonoi_score }}点</td>
                         <td>{{ $post->rt_score }}点</td>
                         <td>{{ $post->wt_score }}点</td>
                         <td>{{ $post->rest_score }}点</td>
@@ -165,7 +220,7 @@
                             </form>
                         </td>
                     </tr>
-                @endforeach
+                @endforeach --}}
     @endif
     </tbody>
     <tfoot>

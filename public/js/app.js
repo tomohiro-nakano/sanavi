@@ -5425,6 +5425,26 @@ new (scroll_hint__WEBPACK_IMPORTED_MODULE_0___default())(".js-scrollable", {
 }); // スターレーティングを各項目別に生成
 
 
+$(document).ready(function () {
+  $('#input-3').rating({
+    displayOnly: true,
+    step: 0.5
+  });
+});
+new Vue({
+  el: "#star-read",
+  components: {
+    "star-read": (vue_star_rating__WEBPACK_IMPORTED_MODULE_1___default())
+  },
+  methods: {
+    setRating: function setRating(rating) {
+      this.rating = rating;
+    }
+  },
+  data: {
+    posts: posts
+  }
+});
 new Vue({
   el: "#star-all",
   components: {

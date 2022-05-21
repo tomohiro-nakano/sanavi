@@ -656,6 +656,6 @@ hr {
     white-space: nowrap;
 }
 
-#star {
-    margin: -8px;
+.post-button {
+    margin: 16px;
 }
