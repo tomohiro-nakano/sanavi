@@ -133,7 +133,7 @@ hr {
     text-align: center;
     background-attachment: relative;
     background-position: center center;
-    min-height: 500px;
+    min-height: 400px;
     width: 100%;
     -webkit-background-size: 100%;
     -moz-background-size: 100%;
@@ -143,6 +143,9 @@ hr {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    /* background-size: auto 300px;
+    width: 500px;
+    height: 100px; */
 }
 
 
@@ -644,12 +647,6 @@ hr {
     width: 350px;
     text-align: center;
 }
-
-/* .td-address {
-    table-layout: fixed;
-    word-break : break-all;
-    overflow-wrap : break-word;
-} */
 
 .scroll-table {
     /* overflow: auto; */
