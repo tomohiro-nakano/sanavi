@@ -28,25 +28,26 @@ new ScrollHint(".js-scrollable", {
 // スターレーティングを各項目別に生成
 import StarRating from "vue-star-rating";
 
-$(document).ready(function(){
-    $('#input-3').rating({displayOnly: true, step: 0.5});
-});
 
-
-new Vue({
-    el: "#star-read",
-    components: {
-        "star-read": StarRating,
-    },
-    methods: {
-        setRating: function (rating) {
-            this.rating = rating;
-        },
-    },
-    data: {
-        posts: posts,
-    },
-});
+// new Vue({
+//     el: "#star-read",
+//     components: {
+//         "star-read": StarRating,
+//     },
+//     // methods: {
+//     //     setRating: function (rating) {
+//     //         this.rating = rating;
+//     //     },
+//     // },
+//     export default {
+//         props: {
+//           posts: {
+//             type: String,
+//             required: true
+//           }
+//         },
+//       }
+// });
 
 
 new Vue({
