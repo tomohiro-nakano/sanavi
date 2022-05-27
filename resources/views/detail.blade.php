@@ -147,17 +147,17 @@
 
 
                 {{-- コンポーネントに$posts配列を渡す --}}
-                <star-read v-bind:posts="{{ ($posts) }}">
+                {{-- <star-read v-bind:posts="{{ ($posts) }}"> --}}
 
                 {{-- :posts="@json({{ $posts }})" --}}
                 {{-- v-bind:categories="{{ ($categories) }}" --}}
 
-                <td>
+                {{-- <td>
                     <div id="star-read">
                         <star-read :rating="{{ posts->all_score }}" :read-only="true" :increment="0.01">
                         </star-read>
                     </div>
-                </td>
+                </td> --}}
 
 
 
