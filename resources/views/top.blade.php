@@ -30,13 +30,5 @@
         </div>
     @endif
 
-    {{-- logo --}}
-    <div class="container">
-        <div class="row centered">
-            <div class="col-lg-12">
-                <a href="#"><img src="img/logo/logo_transparent.png" class="top-logo"></a>
-            </div>
-        </div>
-    </div>
 
 @endsection

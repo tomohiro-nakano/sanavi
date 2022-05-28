@@ -147,7 +147,8 @@
 
 
                 {{-- コンポーネントに$posts配列を渡す --}}
-                {{-- <star-read v-bind:posts="{{ ($posts) }}"> --}}
+                {{-- <star-read v-bind:posts="{{ ($posts) }}"></star-read> --}}
+
 
                 {{-- :posts="@json({{ $posts }})" --}}
                 {{-- v-bind:categories="{{ ($categories) }}" --}}
@@ -161,7 +162,13 @@
 
 
 
-                {{-- @foreach ($posts as $post)
+                @foreach ($posts as $post)
+
+                    <example-component :post='@json($post->all_score)'></example-component>
+
+                    {{-- <star-read :post='@json($post->all_score)' :read-only="true" :increment="0.01"></star-read> --}}
+
+{{--
                     <tr>
                         <td>{{ $post->user_name }}</td>
 
@@ -228,8 +235,8 @@
                                 </button>
                             </form>
                         </td>
-                    </tr>
-                @endforeach --}}
+                    </tr> --}}
+                @endforeach
     @endif
     </tbody>
     <tfoot>

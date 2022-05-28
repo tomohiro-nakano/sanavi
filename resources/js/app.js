@@ -13,8 +13,15 @@ Vue.component(
     require("./components/ExampleComponent.vue").default
 );
 
+const app = new Vue({
+    el: "#app",
+    data: {
+        message: { props: ["testparam"] },
+    },
+});
+
 // スクロールヒント
-import ScrollHint from 'scroll-hint';
+import ScrollHint from "scroll-hint";
 // const ScrollHint = require('scroll-hint');
 new ScrollHint(".js-scrollable", {
     suggestiveShadow: true,
@@ -24,42 +31,33 @@ new ScrollHint(".js-scrollable", {
     },
 });
 
-
 // スターレーティングを各項目別に生成
 import StarRating from "vue-star-rating";
-
 
 // new Vue({
 //     el: "#star-read",
 //     components: {
 //         "star-read": StarRating,
 //     },
-//     // methods: {
-//     //     setRating: function (rating) {
-//     //         this.rating = rating;
-//     //     },
-//     // },
-//     export default {
-//         props: {
-//           posts: {
-//             type: String,
-//             required: true
-//           }
+//     methods: {
+//         setRating: function (rating) {
+//             this.rating = post;
 //         },
-//       }
+//     },
+//     data: {
+//         rating: 3,
+//     },
 // });
-
 
 new Vue({
     el: "#star-all",
     components: {
         "star-all": StarRating,
     },
-    methods: {
-        setRating: function (rating) {
-            this.rating = rating;
-        },
-    },
+    // methods: {
+    //     setRating: function (rating) {
+    //         this.rating = rating;
+    //     },
     data: {
         rating: 3,
     },
