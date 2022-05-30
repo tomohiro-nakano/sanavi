@@ -65,8 +65,9 @@
                 <div class="input-group-prepend">
                     <div class="input-group-text-2"><i class="fa fa-star-half-o" aria-hidden="true"></i>　総合評価</div>
                 </div>
-                <star-all :star-size="25"  :read-only="true" :increment="0.5" text-class="custom-text" :rating="{{ $all_avg }}"
-                    :round-start-rating="false" @rating-selected="setRating" class="form-control bg-light"></star-all>
+                <star-all :star-size="25" :read-only="true" :increment="0.5" text-class="custom-text"
+                    :rating="{{ $all_avg }}" :round-start-rating="false" @rating-selected="setRating"
+                    class="form-control bg-light"></star-all>
             </div>
         </div>
     </div>
@@ -76,8 +77,9 @@
                 <div class="input-group-prepend">
                     <div class="input-group-text-2"><i class="fa fa-star-half-o" aria-hidden="true"></i>　ととのい度</div>
                 </div>
-                <star-totonoi :star-size="25"  :read-only="true" :increment="0.5" text-class="custom-text" :rating="{{ $totonoi_avg }}"
-                :round-start-rating="false" @rating-selected="setRating" class="form-control bg-light"></star-totonoi>
+                <star-totonoi :star-size="25" :read-only="true" :increment="0.5"
+                    text-class="custom-text" :rating="{{ $totonoi_avg }}" :round-start-rating="false"
+                    @rating-selected="setRating" class="form-control bg-light"></star-totonoi>
             </div>
         </div>
     </div>
@@ -87,8 +89,9 @@
                 <div class="input-group-prepend">
                     <div class="input-group-text-2"><i class="fa fa-star-half-o" aria-hidden="true"></i>　温度評価</div>
                 </div>
-                <star-rt :star-size="25"  :read-only="true" :increment="0.5" text-class="custom-text" :rating="{{ $rt_avg }}"
-                :round-start-rating="false" @rating-selected="setRating" class="form-control bg-light"></star-rt>
+                <star-rt :star-size="25" :read-only="true" :increment="0.5" text-class="custom-text"
+                    :rating="{{ $rt_avg }}" :round-start-rating="false" @rating-selected="setRating"
+                    class="form-control bg-light"></star-rt>
             </div>
         </div>
     </div>
@@ -98,8 +101,9 @@
                 <div class="input-group-prepend">
                     <div class="input-group-text-2"><i class="fa fa-star-half-o" aria-hidden="true"></i>　水温評価</div>
                 </div>
-                <star-wt :star-size="25"  :read-only="true" :increment="0.5" text-class="custom-text" :rating="{{ $wt_avg }}"
-                :round-start-rating="false" @rating-selected="setRating" class="form-control bg-light"></star-wt>
+                <star-wt :star-size="25" :read-only="true" :increment="0.5" text-class="custom-text"
+                    :rating="{{ $wt_avg }}" :round-start-rating="false" @rating-selected="setRating"
+                    class="form-control bg-light"></star-wt>
             </div>
         </div>
     </div>
@@ -109,8 +113,9 @@
                 <div class="input-group-prepend">
                     <div class="input-group-text-2"><i class="fa fa-star-half-o" aria-hidden="true"></i>　外気浴（休憩）評価</div>
                 </div>
-                <star-rest :star-size="25"  :read-only="true" :increment="0.5" text-class="custom-text" :rating="{{ $rest_avg }}"
-                :round-start-rating="false" @rating-selected="setRating" class="form-control bg-light"></star-rest>
+                <star-rest :star-size="25" :read-only="true" :increment="0.5"
+                    text-class="custom-text" :rating="{{ $rest_avg }}" :round-start-rating="false"
+                    @rating-selected="setRating" class="form-control bg-light"></star-rest>
             </div>
         </div>
     </div>
@@ -120,8 +125,9 @@
                 <div class="input-group-prepend">
                     <div class="input-group-text-2"><i class="fa fa-star-half-o" aria-hidden="true"></i>　混雑度</div>
                 </div>
-                <star-cong :star-size="25"  :read-only="true" :increment="0.5" text-class="custom-text" :rating="{{ $cong_avg }}"
-                :round-start-rating="false" @rating-selected="setRating" class="form-control bg-light"></star-cong>
+                <star-cong :star-size="25" :read-only="true" :increment="0.5"
+                    text-class="custom-text" :rating="{{ $cong_avg }}" :round-start-rating="false"
+                    @rating-selected="setRating" class="form-control bg-light"></star-cong>
             </div>
         </div>
     </div>
@@ -143,7 +149,7 @@
             <h2 class="text-center">{{ $place->place_name }}　サ活投稿一覧</h2>
             <div class="js-scrollable">
                 <div class="scroll-table">
-                    <table class="table table-bordered table-striped task-table table-hover">
+                    <table class="table table-bordered table-striped task-table table-hover table-sakatu">
                         <thead class="thead-dark">
                             <tr>
                                 <th class="th-star-read">ユーザー名</th>
@@ -153,36 +159,36 @@
                                 <th class="th-star-read">水温評価</th>
                                 <th class="th-star-read">外気浴（休憩）評価</th>
                                 <th class="th-star-read">混雑度</th>
-                                <th class="th-star-read">訪問日</th>
-                                <th class="th-star-read">感想</th>
-                                <th class="th-star-read">編集</th>
-                                <th class="th-star-read">削除</th>
+                                <th class="th-visit-date">訪問日</th>
+                                <th class="th-comment">感想</th>
+                                <th class="th-edit">編集</th>
+                                <th class="th-delete">削除</th>
                             </tr>
 
 
                             @foreach ($posts as $post)
                                 <tr>
                                     <td>{{ $post->user_name }}</td>
-                                    <td class="td-star-read">
+                                    <td>
                                         <example-component :post='@json($post->all_score)'></example-component>
                                     </td>
-                                    <td class="td-star-read">
+                                    <td>
                                         <example-component :post='@json($post->totonoi_score)'></example-component>
                                     </td>
-                                    <td class="td-star-read">
+                                    <td>
                                         <example-component :post='@json($post->rt_score)'></example-component>
                                     </td>
-                                    <td class="td-star-read">
+                                    <td>
                                         <example-component :post='@json($post->wt_score)'></example-component>
                                     </td>
-                                    <td class="td-star-read">
+                                    <td>
                                         <example-component :post='@json($post->rest_score)'></example-component>
                                     </td>
-                                    <td class="td-star-read">
+                                    <td>
                                         <example-component :post='@json($post->cong_score)'></example-component>
                                     </td>
-                                    <td class="th-star-read">{{ $post->visit_date }}</td>
-                                    <td class="th-star-read">{{ $post->comment }}</td>
+                                    <td>{{ $post->visit_date }}</td>
+                                    <td class="th-comment">{{ $post->comment }}</td>
                                     <td>
                                         <form action="{{ url($post->id . '/post_edit') }}" method="get">
                                             {{ csrf_field() }}

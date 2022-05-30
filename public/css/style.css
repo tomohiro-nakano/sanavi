@@ -645,26 +645,47 @@ hr {
     text-align: center;
 }
 
-
-
-.th-star-read {
-    /* display: inline; */
-    width: 200px;
-    text-align: center;
-    /* table-layout: fixed; */
-}
-
-.td-star-read {
-    /* display: inline-block; */
-    /* width: 300px; */
-    text-align: center;
+.table-sakatu {
+    table-layout: fixed;
+    min-width: 100%;
 }
 
 .scroll-table {
-    /* overflow: auto; */
+    /* overflow:scroll; */
     white-space: nowrap;
 }
 
 .post-button {
     margin: 16px;
+}
+
+.th-star-read {
+    width: 140px;
+    text-align: center;
+    overflow:hidden;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.th-comment {
+    width: 500px;
+    text-align: center;
+    overflow:hidden;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.th-visit-date {
+    width: 100px;
+    text-align: center;
+}
+
+.th-edit {
+    width: 90px;
+    text-align: center;
+}
+
+.th-delete {
+    width: 80px;
+    text-align: center;
 }

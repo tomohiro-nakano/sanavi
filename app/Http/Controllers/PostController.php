@@ -62,7 +62,7 @@ class PostController extends Controller
     public function update(Request $request, Post $post)
     {
         $validator = Validator::make($request->all(), [
-            // 'place_id' => 'required',
+            'place_id' => 'required',
             'visit_date' => 'required | date',
             'comment' => 'required | string',
         ]);

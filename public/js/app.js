@@ -28440,7 +28440,7 @@ var render = function () {
           rating: _vm.post,
           "read-only": true,
           increment: 0.01,
-          "star-size": 25,
+          "star-size": 20,
         },
       }),
     ],
