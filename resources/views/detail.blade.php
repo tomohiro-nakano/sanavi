@@ -59,12 +59,16 @@
                 value="{{ number_format($place->price) }}円">
         </div>
     </div>
-    <div class="form-group col-12">
-        <div class="input-group mb-4">
-            <div class="input-group-prepend">
-                <div class="input-group-text-2"><i class="fa fa-star-half-o" aria-hidden="true"></i>　総合評価</div>
+    <div id="star-ave">
+        <div class="form-group col-12">
+            <div class="input-group mb-4">
+                <div class="input-group-prepend">
+                    <div class="input-group-text-2"><i class="fa fa-star-half-o" aria-hidden="true"></i>　総合評価</div>
+                </div>
+                {{-- <input disabled class="form-control bg-light" style="font-size:16px" value="{{ '' }}"> --}}
+                <star-ave :star-size="25"  :read-only="true" :increment="0.5" text-class="custom-text" :rating="3.0"
+                    :round-start-rating="false" @rating-selected="setRating" class="form-control bg-light"></star-ave>
             </div>
-            <input disabled class="form-control bg-light" style="font-size:16px" value="{{ '' }}">
         </div>
     </div>
     <div class="form-group col-12">

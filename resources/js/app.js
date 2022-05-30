@@ -18,6 +18,22 @@ Vue.component(
 import StarRating from "vue-star-rating";
 
 new Vue({
+    el: "#star-ave",
+    components: {
+        "star-ave": StarRating,
+    },
+    methods: {
+        setRating: function (rating) {
+            this.rating = rating;
+        },
+    },
+    data: {
+        rating: 3,
+    },
+});
+
+
+new Vue({
     el: "#star-all",
     components: {
         "star-all": StarRating,

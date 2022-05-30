@@ -35,11 +35,11 @@ class PlacePostController extends Controller
 
     public function detail(PlacePost $place)
     {
-
-        Log::debug($place); //ログ出力（変数）
-        // $posts = Post::where('place_id', $place->id)->get();
         $posts = Post::where('place_id', $place->id)->orderBy('id', 'asc')->paginate(10);
+        $posts_all = Post::where('place_id', $place->id);
+        $all_avg = $posts_all->avg('all_score');
         Log::debug($place); //ログ出力（変数）
+        Log::debug($all_avg); //ログ出力（変数）
         Log::debug(print_r($posts, true)); //ログ出力（配列）
         return view('detail', compact('place', 'posts'));
     }
