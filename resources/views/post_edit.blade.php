@@ -4,10 +4,12 @@
 
 @section('content')
 
-    <form action="{{ url($post->id . '/post') }}" method="post" class="row">
+    <form action="{{ url('/post_edit/' . $post->id) }}" method="post" class="row"
+        enctype="multipart/form-data">
         {{ csrf_field() }}
+        {{ method_field('PUT') }}
         <input type='hidden' name='user_id' value="{{ Auth::user()->id }}">
-        <input type='hidden' name='place_id' value="{{ $post->id }}">
+        <input type='hidden' name='place_id' value="{{ $post->place_id }}">
         @include('common.errors')
 
         <div>
@@ -32,7 +34,7 @@
                             <div class="input-group-text-2"><i class="fa fa-star-half-o" aria-hidden="true"></i>　総合評価</div>
                         </div>
                         <star-all :star-size="25" :increment="0.5" text-class="custom-text"
-                            :rating="3.0" :round-start-rating="false" @rating-selected="setRating"
+                            :rating="{{ $post->all_score }}" :round-start-rating="false" @rating-selected="setRating"
                             class="form-control bg-light"></star-all>
                         <input type="hidden" name="all_score" :value="this.rating" />
                     </div>
@@ -47,7 +49,7 @@
                             <div class="input-group-text-2"><i class="fa fa-star-half-o" aria-hidden="true"></i>　ととのい度</div>
                         </div>
                         <star-totonoi :star-size="25" :increment="0.5" text-class="custom-text"
-                            :rating="3.0" :round-start-rating="false" @rating-selected="setRating"
+                            :rating="{{ $post->totonoi_score }}" :round-start-rating="false" @rating-selected="setRating"
                             class="form-control bg-light"></star-totonoi>
                         <input type="hidden" name="totonoi_score" :value="this.rating" />
                     </div>
@@ -62,7 +64,7 @@
                             <div class="input-group-text-2"><i class="fa fa-star-half-o" aria-hidden="true"></i>　温度評価</div>
                         </div>
                         <star-rt :star-size="25" :increment="0.5" text-class="custom-text"
-                            :rating="3.0" :round-start-rating="false" @rating-selected="setRating"
+                            :rating="{{ $post->rt_score }}" :round-start-rating="false" @rating-selected="setRating"
                             class="form-control bg-light"></star-rt>
                         <input type="hidden" name="rt_score" :value="this.rating" />
                     </div>
@@ -78,7 +80,7 @@
                         </div>
                         <div>
                             <star-wt :star-size="25" :increment="0.5" text-class="custom-text"
-                                :rating="3.0" :round-start-rating="false" @rating-selected="setRating"
+                                :rating="{{ $post->wt_score }}" :round-start-rating="false" @rating-selected="setRating"
                                 class="form-control bg-light">
                             </star-wt>
                             <input type="hidden" name="wt_score" :value="this.rating" />
@@ -97,8 +99,8 @@
                         </div>
                         <div>
                             <star-rest :star-size="25" :increment="0.5" text-class="custom-text"
-                                :rating="3.0" :round-start-rating="false" @rating-selected="setRating"
-                                class="form-control bg-light">
+                                :rating="{{ $post->rest_score }}" :round-start-rating="false"
+                                @rating-selected="setRating" class="form-control bg-light">
                             </star-rest>
                             <input type="hidden" name="rest_score" :value="this.rating" />
                         </div>
@@ -115,8 +117,8 @@
                         </div>
                         <div>
                             <star-cong :star-size="25" :increment="0.5" text-class="custom-text"
-                                :rating="3.0" :round-start-rating="false" @rating-selected="setRating"
-                                class="form-control bg-light">
+                                :rating="{{ $post->cong_score }}" :round-start-rating="false"
+                                @rating-selected="setRating" class="form-control bg-light">
                             </star-cong>
                             <input type="hidden" name="cong_score" :value="this.rating" />
                         </div>
@@ -154,7 +156,7 @@
         <div class="post-button">
             <div class="form-group col-md-3 col-xs-12">
                 <div class="d-grid gap-2">
-                    <a href="{{ url('/place_list/' . $post->place_id . '/detail') }}"
+                    <a href="{{ url('/detail/' . $post->place_id) }}"
                         class="btn btn-outline-secondary btn-outline btn-lg">
                         <i class="fa fa-mail-reply"></i>　キャンセル
                     </a>

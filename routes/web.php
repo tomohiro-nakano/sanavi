@@ -37,16 +37,6 @@ Route::group(['middleware' => 'auth'], function () { //ログイン認証しな�
     Route::get('/{post}/post_edit', [PostController::class, 'post_edit']);
     Route::put('/post_edit/{post}', [PostController::class, 'update']);
     Route::delete('/detail/{post}', [PostController::class, 'destroy']);
-    // Route::delete('/detail/{place}', [PostController::class, 'destroy']);
-
-    Route::get('/sanavi', [SanaviController::class, 'create']);
-    Route::post('/sanavi', [SanaviController::class, 'store']);
-    Route::delete('/sanavi/{sanavi}', [SanaviController::class, 'destroy']);
-    Route::put('/sanavi/{sanavi}', [SanaviController::class, 'update']);
-    Route::get('/sanavi/{sanavi}/show', [SanaviController::class, 'show']);
-    Route::resource('items', 'ItemsController'); //ルーティングファイルを見やすくする
 });
 
 Auth::routes();
-
-// Route::get('/home', [HomeController::class, 'index'])->name('home');

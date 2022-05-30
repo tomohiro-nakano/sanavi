@@ -25,12 +25,6 @@ class PostController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'place_id' => 'required',
-            // 'all_score' => 'required | numeric | between:1,5',
-            // 'totonoi_score' => 'required | numeric | between:1,5',
-            // 'rt_score' => 'required | numeric | between:1,5',
-            // 'wt_score' => 'required | numeric | between:1,5',
-            // 'rest_score' => 'required | numeric | between:1,5',
-            // 'cong_score' => 'required | numeric | between:1,5',
             'visit_date' => 'required | date',
             'comment' => 'required | string',
         ]);
@@ -60,8 +54,7 @@ class PostController extends Controller
     {
         $place = PlacePost::where('id', $post->place_id)->get();
         Log::debug($post); //ログ出力（変数）
-        Log::debug($place); //ログ出力（変数）
-        // return view('post_edit', ['post' => $post]);
+        Log::debug(print_r($place, true)); //ログ出力（配列）
         return view('post_edit', compact('post', 'place'));
     }
 
@@ -69,11 +62,9 @@ class PostController extends Controller
     public function update(Request $request, Post $post)
     {
         $validator = Validator::make($request->all(), [
-            'place_name' => 'required',
-            'room_temp' => 'required | numeric | between:80,110',
-            'water_temp' => 'required | numeric | between:10,20',
-            'price' => 'required | numeric',
-            'address' => 'required',
+            // 'place_id' => 'required',
+            'visit_date' => 'required | date',
+            'comment' => 'required | string',
         ]);
 
         if ($validator->fails()) {
@@ -93,8 +84,9 @@ class PostController extends Controller
         $post->comment     = $request->comment;
         $post->save();
 
+        Log::debug($request); //ログ出力（変数）
         $request->session()->flash('update', 'データを編集しました');
-        return redirect('place_list' . $post->id . '/detail');
+        return redirect(url('/detail/'  . $request->place_id));
     }
 
 
