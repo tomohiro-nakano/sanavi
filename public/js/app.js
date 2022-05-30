@@ -5429,9 +5429,9 @@ Vue.component("example-component", (__webpack_require__(/*! ./components/Example
 
 
 new Vue({
-  el: "#star-ave",
+  el: "#star-avg",
   components: {
-    "star-ave": (vue_star_rating__WEBPACK_IMPORTED_MODULE_0___default())
+    "star-avg": (vue_star_rating__WEBPACK_IMPORTED_MODULE_0___default())
   },
   methods: {
     setRating: function setRating(rating) {

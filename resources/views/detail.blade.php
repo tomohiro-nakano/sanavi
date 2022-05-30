@@ -59,56 +59,70 @@
                 value="{{ number_format($place->price) }}円">
         </div>
     </div>
-    <div id="star-ave">
+    <div id="star-all">
         <div class="form-group col-12">
             <div class="input-group mb-4">
                 <div class="input-group-prepend">
                     <div class="input-group-text-2"><i class="fa fa-star-half-o" aria-hidden="true"></i>　総合評価</div>
                 </div>
-                {{-- <input disabled class="form-control bg-light" style="font-size:16px" value="{{ '' }}"> --}}
-                <star-ave :star-size="25"  :read-only="true" :increment="0.5" text-class="custom-text" :rating="3.0"
-                    :round-start-rating="false" @rating-selected="setRating" class="form-control bg-light"></star-ave>
+                <star-all :star-size="25"  :read-only="true" :increment="0.5" text-class="custom-text" :rating="{{ $all_avg }}"
+                    :round-start-rating="false" @rating-selected="setRating" class="form-control bg-light"></star-all>
             </div>
         </div>
     </div>
-    <div class="form-group col-12">
-        <div class="input-group mb-4">
-            <div class="input-group-prepend">
-                <div class="input-group-text-2"><i class="fa fa-star-half-o" aria-hidden="true"></i>　ととのい度</div>
+    <div id="star-totonoi">
+        <div class="form-group col-12">
+            <div class="input-group mb-4">
+                <div class="input-group-prepend">
+                    <div class="input-group-text-2"><i class="fa fa-star-half-o" aria-hidden="true"></i>　ととのい度</div>
+                </div>
+                <star-totonoi :star-size="25"  :read-only="true" :increment="0.5" text-class="custom-text" :rating="{{ $totonoi_avg }}"
+                :round-start-rating="false" @rating-selected="setRating" class="form-control bg-light"></star-totonoi>
             </div>
-            <input disabled class="form-control bg-light" style="font-size:16px" value="{{ '' }}">
         </div>
     </div>
-    <div class="form-group col-12">
-        <div class="input-group mb-4">
-            <div class="input-group-prepend">
-                <div class="input-group-text-2"><i class="fa fa-star-half-o" aria-hidden="true"></i>　温度評価</div>
+    <div id="star-rt">
+        <div class="form-group col-12">
+            <div class="input-group mb-4">
+                <div class="input-group-prepend">
+                    <div class="input-group-text-2"><i class="fa fa-star-half-o" aria-hidden="true"></i>　温度評価</div>
+                </div>
+                <star-rt :star-size="25"  :read-only="true" :increment="0.5" text-class="custom-text" :rating="{{ $rt_avg }}"
+                :round-start-rating="false" @rating-selected="setRating" class="form-control bg-light"></star-rt>
             </div>
-            <input disabled class="form-control bg-light" style="font-size:16px" value="{{ '' }}">
         </div>
     </div>
-    <div class="form-group col-12">
-        <div class="input-group mb-4">
-            <div class="input-group-prepend">
-                <div class="input-group-text-2"><i class="fa fa-star-half-o" aria-hidden="true"></i>　水温評価</div>
+    <div id="star-wt">
+        <div class="form-group col-12">
+            <div class="input-group mb-4">
+                <div class="input-group-prepend">
+                    <div class="input-group-text-2"><i class="fa fa-star-half-o" aria-hidden="true"></i>　水温評価</div>
+                </div>
+                <star-wt :star-size="25"  :read-only="true" :increment="0.5" text-class="custom-text" :rating="{{ $wt_avg }}"
+                :round-start-rating="false" @rating-selected="setRating" class="form-control bg-light"></star-wt>
             </div>
-            <input disabled class="form-control bg-light" style="font-size:16px" value="{{ '' }}">
         </div>
     </div>
-    <div class="form-group col-12">
-        <div class="input-group mb-4">
-            <div class="input-group-prepend">
-                <div class="input-group-text-2"><i class="fa fa-star-half-o" aria-hidden="true"></i>　外気浴（休憩）評価</div>
+    <div id="star-rest">
+        <div class="form-group col-12">
+            <div class="input-group mb-4">
+                <div class="input-group-prepend">
+                    <div class="input-group-text-2"><i class="fa fa-star-half-o" aria-hidden="true"></i>　外気浴（休憩）評価</div>
+                </div>
+                <star-rest :star-size="25"  :read-only="true" :increment="0.5" text-class="custom-text" :rating="{{ $rest_avg }}"
+                :round-start-rating="false" @rating-selected="setRating" class="form-control bg-light"></star-rest>
             </div>
-            <input disabled class="form-control bg-light" style="font-size:16px" value="{{ '' }}">
         </div>
     </div>
-    <div class="form-group col-12">
-        <div class="input-group mb-4">
-            <div class="input-group-prepend">
-                <div class="input-group-text-2"><i class="fa fa-star-half-o" aria-hidden="true"></i>　混雑度</div>
+    <div id="star-cong">
+        <div class="form-group col-12">
+            <div class="input-group mb-4">
+                <div class="input-group-prepend">
+                    <div class="input-group-text-2"><i class="fa fa-star-half-o" aria-hidden="true"></i>　混雑度</div>
+                </div>
+                <star-cong :star-size="25"  :read-only="true" :increment="0.5" text-class="custom-text" :rating="{{ $cong_avg }}"
+                :round-start-rating="false" @rating-selected="setRating" class="form-control bg-light"></star-cong>
             </div>
-            <input disabled class="form-control bg-light" style="font-size:16px" value="{{ '' }}">
         </div>
     </div>
     <div class="form-group col-12">

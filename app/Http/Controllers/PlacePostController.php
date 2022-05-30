@@ -37,11 +37,16 @@ class PlacePostController extends Controller
     {
         $posts = Post::where('place_id', $place->id)->orderBy('id', 'asc')->paginate(10);
         $posts_all = Post::where('place_id', $place->id);
-        $all_avg = $posts_all->avg('all_score');
+        $all_avg = round($posts_all->avg('all_score'), 2);
+        $totonoi_avg = round($posts_all->avg('totonoi_score'), 2);
+        $rt_avg = round($posts_all->avg('rt_score'), 2);
+        $wt_avg = round($posts_all->avg('wt_score'), 2);
+        $rest_avg = round($posts_all->avg('rest_score'), 2);
+        $cong_avg = round($posts_all->avg('cong_score'), 2);
         Log::debug($place); //ログ出力（変数）
         Log::debug($all_avg); //ログ出力（変数）
         Log::debug(print_r($posts, true)); //ログ出力（配列）
-        return view('detail', compact('place', 'posts'));
+        return view('detail', compact('place', 'posts', 'all_avg', 'totonoi_avg', 'rt_avg', 'wt_avg', 'rest_avg', 'cong_avg'));
     }
 
     public function place_post()
@@ -55,8 +60,8 @@ class PlacePostController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'place_name' => 'required',
-            'room_temp' => 'required | numeric | between:80,110',
-            'water_temp' => 'required | numeric | between:10,20',
+            'room_temp' => 'required | numeric | between:0,180',
+            'water_temp' => 'required | numeric | between:1,30',
             'price' => 'required | numeric',
             'address' => 'required',
         ]);
