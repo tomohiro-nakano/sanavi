@@ -15,7 +15,7 @@
 @endsection
 
 
-
+{{-- <table class="table table-bordered table-striped task-table table-hover"> --}}
 
 
 {{-- <td>

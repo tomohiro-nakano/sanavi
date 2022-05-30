@@ -1,20 +1,12 @@
 <template>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <!-- <div class="card-header">{{ post }}</div> -->
-                    <div id="star-read">
-                        <star-read
-                            :rating=post
-                            :read-only="true"
-                            :increment="0.01"
-                        ></star-read>
-                    </div>
-                </div>
-            </div>
+        <div id="star-read">
+            <star-read
+                :rating="post"
+                :read-only="true"
+                :increment="0.01"
+                :star-size="25"
+            ></star-read>
         </div>
-    </div>
 </template>
 
 <script>
@@ -39,12 +31,4 @@ export default {
         post: String,
     },
 };
-// export default {
-//     mounted() {
-//         console.log("Component mounted.");
-//     },
-//     props: {
-//         post: String,
-//     },
-// };
 </script>

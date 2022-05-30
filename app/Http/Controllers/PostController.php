@@ -25,12 +25,12 @@ class PostController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'place_id' => 'required',
-            'all_score' => 'required | numeric | between:1,5',
-            'totonoi_score' => 'required | numeric | between:1,5',
-            'rt_score' => 'required | numeric | between:1,5',
-            'wt_score' => 'required | numeric | between:1,5',
-            'rest_score' => 'required | numeric | between:1,5',
-            'cong_score' => 'required | numeric | between:1,5',
+            // 'all_score' => 'required | numeric | between:1,5',
+            // 'totonoi_score' => 'required | numeric | between:1,5',
+            // 'rt_score' => 'required | numeric | between:1,5',
+            // 'wt_score' => 'required | numeric | between:1,5',
+            // 'rest_score' => 'required | numeric | between:1,5',
+            // 'cong_score' => 'required | numeric | between:1,5',
             'visit_date' => 'required | date',
             'comment' => 'required | string',
         ]);

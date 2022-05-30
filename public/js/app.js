@@ -5381,15 +5381,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   el: "#star-read",
@@ -5410,14 +5401,7 @@ __webpack_require__.r(__webpack_exports__);
   props: {
     post: String
   }
-}); // export default {
-//     mounted() {
-//         console.log("Component mounted.");
-//     },
-//     props: {
-//         post: String,
-//     },
-// };
+});
 
 /***/ }),
 
@@ -5429,10 +5413,10 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var scroll_hint__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! scroll-hint */ "./node_modules/scroll-hint/lib/index.js");
-/* harmony import */ var scroll_hint__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(scroll_hint__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var vue_star_rating__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-star-rating */ "./node_modules/vue-star-rating/dist/VueStarRating.common.js");
-/* harmony import */ var vue_star_rating__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue_star_rating__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var vue_star_rating__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-star-rating */ "./node_modules/vue-star-rating/dist/VueStarRating.common.js");
+/* harmony import */ var vue_star_rating__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue_star_rating__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var scroll_hint__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! scroll-hint */ "./node_modules/scroll-hint/lib/index.js");
+/* harmony import */ var scroll_hint__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(scroll_hint__WEBPACK_IMPORTED_MODULE_1__);
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -5441,50 +5425,19 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 window.Vue = (__webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js")["default"]);
-Vue.component("example-component", (__webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue")["default"]));
-var app = new Vue({
-  el: "#app",
-  data: {
-    message: {
-      props: ["testparam"]
-    }
-  }
-}); // スクロールヒント
+Vue.component("example-component", (__webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue")["default"])); // スターレーティングを各項目別に生成
 
- // const ScrollHint = require('scroll-hint');
-
-new (scroll_hint__WEBPACK_IMPORTED_MODULE_0___default())(".js-scrollable", {
-  suggestiveShadow: true,
-  remainingTime: 5000,
-  i18n: {
-    scrollable: "スクロールできます"
-  }
-}); // スターレーティングを各項目別に生成
-
- // new Vue({
-//     el: "#star-read",
-//     components: {
-//         "star-read": StarRating,
-//     },
-//     methods: {
-//         setRating: function (rating) {
-//             this.rating = post;
-//         },
-//     },
-//     data: {
-//         rating: 3,
-//     },
-// });
 
 new Vue({
   el: "#star-all",
   components: {
-    "star-all": (vue_star_rating__WEBPACK_IMPORTED_MODULE_1___default())
+    "star-all": (vue_star_rating__WEBPACK_IMPORTED_MODULE_0___default())
   },
-  // methods: {
-  //     setRating: function (rating) {
-  //         this.rating = rating;
-  //     },
+  methods: {
+    setRating: function setRating(rating) {
+      this.rating = rating;
+    }
+  },
   data: {
     rating: 3
   }
@@ -5492,7 +5445,7 @@ new Vue({
 new Vue({
   el: "#star-totonoi",
   components: {
-    "star-totonoi": (vue_star_rating__WEBPACK_IMPORTED_MODULE_1___default())
+    "star-totonoi": (vue_star_rating__WEBPACK_IMPORTED_MODULE_0___default())
   },
   methods: {
     setRating: function setRating(rating) {
@@ -5506,7 +5459,7 @@ new Vue({
 new Vue({
   el: "#star-rt",
   components: {
-    "star-rt": (vue_star_rating__WEBPACK_IMPORTED_MODULE_1___default())
+    "star-rt": (vue_star_rating__WEBPACK_IMPORTED_MODULE_0___default())
   },
   methods: {
     setRating: function setRating(rating) {
@@ -5520,7 +5473,7 @@ new Vue({
 new Vue({
   el: "#star-wt",
   components: {
-    "star-wt": (vue_star_rating__WEBPACK_IMPORTED_MODULE_1___default())
+    "star-wt": (vue_star_rating__WEBPACK_IMPORTED_MODULE_0___default())
   },
   methods: {
     setRating: function setRating(rating) {
@@ -5534,7 +5487,7 @@ new Vue({
 new Vue({
   el: "#star-rest",
   components: {
-    "star-rest": (vue_star_rating__WEBPACK_IMPORTED_MODULE_1___default())
+    "star-rest": (vue_star_rating__WEBPACK_IMPORTED_MODULE_0___default())
   },
   methods: {
     setRating: function setRating(rating) {
@@ -5548,7 +5501,7 @@ new Vue({
 new Vue({
   el: "#star-cong",
   components: {
-    "star-cong": (vue_star_rating__WEBPACK_IMPORTED_MODULE_1___default())
+    "star-cong": (vue_star_rating__WEBPACK_IMPORTED_MODULE_0___default())
   },
   methods: {
     setRating: function setRating(rating) {
@@ -5567,24 +5520,24 @@ function delete_alert(e) {
   }
 
   document.deleteform.submit();
-} // import StarRating from 'vue-star-rating';
-// Vue.component('star-rating', StarRating);
-// const app = new vue({
-//     methods: {
-//       setRating(rating){
-//         this.rating= rating;
-//       }
-//     },
-//     data: {
-//       rating: 0
-//     }
-//   })
-//   app.component('star-rating', VueStarRating.default)
-//   app.mount('#app')
-
+}
 
 $(".custom-file-input").on("change", function () {
   $(this).next(".custom-file-label").html($(this)[0].files[0].name);
+}); // example-vue
+
+new Vue({
+  el: "#example-vue"
+}); // スクロールヒント
+
+ // const ScrollHint = require('scroll-hint');
+
+new (scroll_hint__WEBPACK_IMPORTED_MODULE_1___default())(".js-scrollable", {
+  suggestiveShadow: true,
+  remainingTime: 5000,
+  i18n: {
+    scrollable: "スクロールできます"
+  }
 });
 
 /***/ }),
@@ -28464,26 +28417,21 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row justify-content-center" }, [
-      _c("div", { staticClass: "col-md-8" }, [
-        _c("div", { staticClass: "card" }, [
-          _c("div", { staticClass: "card-header" }, [_vm._v(_vm._s(_vm.post))]),
-          _vm._v(" "),
-          _c(
-            "div",
-            { attrs: { id: "star-read" } },
-            [
-              _c("star-read", {
-                attrs: { rating: _vm.post, "read-only": true, increment: 0.01 },
-              }),
-            ],
-            1
-          ),
-        ]),
-      ]),
-    ]),
-  ])
+  return _c(
+    "div",
+    { attrs: { id: "star-read" } },
+    [
+      _c("star-read", {
+        attrs: {
+          rating: _vm.post,
+          "read-only": true,
+          increment: 0.01,
+          "star-size": 25,
+        },
+      }),
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true

@@ -13,51 +13,20 @@ Vue.component(
     require("./components/ExampleComponent.vue").default
 );
 
-const app = new Vue({
-    el: "#app",
-    data: {
-        message: { props: ["testparam"] },
-    },
-});
-
-// スクロールヒント
-import ScrollHint from "scroll-hint";
-// const ScrollHint = require('scroll-hint');
-new ScrollHint(".js-scrollable", {
-    suggestiveShadow: true,
-    remainingTime: 5000,
-    i18n: {
-        scrollable: "スクロールできます",
-    },
-});
 
 // スターレーティングを各項目別に生成
 import StarRating from "vue-star-rating";
-
-// new Vue({
-//     el: "#star-read",
-//     components: {
-//         "star-read": StarRating,
-//     },
-//     methods: {
-//         setRating: function (rating) {
-//             this.rating = post;
-//         },
-//     },
-//     data: {
-//         rating: 3,
-//     },
-// });
 
 new Vue({
     el: "#star-all",
     components: {
         "star-all": StarRating,
     },
-    // methods: {
-    //     setRating: function (rating) {
-    //         this.rating = rating;
-    //     },
+    methods: {
+        setRating: function (rating) {
+            this.rating = rating;
+        },
+    },
     data: {
         rating: 3,
     },
@@ -146,23 +115,24 @@ function delete_alert(e) {
     document.deleteform.submit();
 }
 
-// import StarRating from 'vue-star-rating';
-
-// Vue.component('star-rating', StarRating);
-
-// const app = new vue({
-//     methods: {
-//       setRating(rating){
-//         this.rating= rating;
-//       }
-//     },
-//     data: {
-//       rating: 0
-//     }
-//   })
-//   app.component('star-rating', VueStarRating.default)
-//   app.mount('#app')
 
 $(".custom-file-input").on("change", function () {
     $(this).next(".custom-file-label").html($(this)[0].files[0].name);
+});
+
+
+// example-vue
+new Vue({
+    el: "#example-vue",
+});
+
+// スクロールヒント
+import ScrollHint from "scroll-hint";
+// const ScrollHint = require('scroll-hint');
+new ScrollHint(".js-scrollable", {
+    suggestiveShadow: true,
+    remainingTime: 5000,
+    i18n: {
+        scrollable: "スクロールできます",
+    },
 });

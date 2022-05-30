@@ -118,135 +118,87 @@
 
 
     {{-- サ活投稿一覧表示 --}}
-    @if (count($posts) == 0)
-        <h3 class="text-center">現在、サ活投稿はありません。<br>ぜひ、サ活投稿をしてください！</h3>
-    @else
-        <h2 class="text-center">{{ $place->place_name }}　サ活投稿一覧</h2>
-        <table class="table table-bordered table-striped task-table table-hover">
-            <thead class="thead-dark">
-                <tr>
-                    <th>ユーザー名</th>
-                    <th>総合評価</th>
-                    <th>ととのい度</th>
-                    <th>室温評価</th>
-                    <th>水温評価</th>
-                    <th>外気浴（休憩）評価</th>
-                    <th>混雑度</th>
-                    <th>訪問日</th>
-                    <th>感想</th>
-                    <th>編集</th>
-                    <th>削除</th>
-                </tr>
-
-                {{-- <td>
-                    <div id="star-read">
-                        <star-read :rating="{{ posts }}" :read-only="true" :increment="0.01">
-                        </star-read>
-                    </div>
-                </td> --}}
+    <div id="example-vue">
+        @if (count($posts) == 0)
+            <h3 class="text-center">現在、サ活投稿はありません。<br>ぜひ、サ活投稿をしてください！</h3>
+        @else
+            <h2 class="text-center">{{ $place->place_name }}　サ活投稿一覧</h2>
+            <div class="js-scrollable">
+                <div class="scroll-table">
+                    <table class="table table-bordered table-striped task-table table-hover">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th class="th-star-read">ユーザー名</th>
+                                <th class="th-star-read">総合評価</th>
+                                <th class="th-star-read">ととのい度</th>
+                                <th class="th-star-read">室温評価</th>
+                                <th class="th-star-read">水温評価</th>
+                                <th class="th-star-read">外気浴（休憩）評価</th>
+                                <th class="th-star-read">混雑度</th>
+                                <th class="th-star-read">訪問日</th>
+                                <th class="th-star-read">感想</th>
+                                <th class="th-star-read">編集</th>
+                                <th class="th-star-read">削除</th>
+                            </tr>
 
 
-                {{-- コンポーネントに$posts配列を渡す --}}
-                {{-- <star-read v-bind:posts="{{ ($posts) }}"></star-read> --}}
+                            @foreach ($posts as $post)
+                                <tr>
+                                    <td>{{ $post->user_name }}</td>
+                                    <td class="td-star-read">
+                                        <example-component :post='@json($post->all_score)'></example-component>
+                                    </td>
+                                    <td class="td-star-read">
+                                        <example-component :post='@json($post->totonoi_score)'></example-component>
+                                    </td>
+                                    <td class="td-star-read">
+                                        <example-component :post='@json($post->rt_score)'></example-component>
+                                    </td>
+                                    <td class="td-star-read">
+                                        <example-component :post='@json($post->wt_score)'></example-component>
+                                    </td>
+                                    <td class="td-star-read">
+                                        <example-component :post='@json($post->rest_score)'></example-component>
+                                    </td>
+                                    <td class="td-star-read">
+                                        <example-component :post='@json($post->cong_score)'></example-component>
+                                    </td>
+                                    <td class="th-star-read">{{ $post->visit_date }}</td>
+                                    <td class="th-star-read">{{ $post->comment }}</td>
+                                    <td>
+                                        <form action="{{ url($post->id . '/post_edit') }}" method="get">
+                                            {{ csrf_field() }}
+                                            <button type="submit" class="btn btn-secondary">
+                                                <i class="fa fa-pencil"></i> 編集
+                                            </button>
+                                        </form>
+                                    </td>
+                                    <td>
+                                        <form action="{{ url('/detail/' . $post->id) }}" method="post">
+                                            {{ csrf_field() }}
+                                            {{ method_field('DELETE') }}
+                                            <button type="submit" class="btn btn-secondary">
+                                                <i class="fa fa-trash"></i> 削除
+                                            </button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        @endif
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="7" class="bg-light pb-0">
+                    {{ $posts->links() }}
+                </td>
+            </tr>
+        </tfoot>
+    </div>
 
-
-                {{-- :posts="@json({{ $posts }})" --}}
-                {{-- v-bind:categories="{{ ($categories) }}" --}}
-
-                {{-- <td>
-                    <div id="star-read">
-                        <star-read :rating="{{ posts->all_score }}" :read-only="true" :increment="0.01">
-                        </star-read>
-                    </div>
-                </td> --}}
-
-
-
-                @foreach ($posts as $post)
-
-                    <example-component :post='@json($post->all_score)'></example-component>
-
-                    {{-- <star-read :post='@json($post->all_score)' :read-only="true" :increment="0.01"></star-read> --}}
-
-{{--
-                    <tr>
-                        <td>{{ $post->user_name }}</td>
-
-                        <td id="star-all">
-                            <star-all :rating="{{ $post->all_score }}" :read-only="true" :increment="0.01">
-                            </star-all>
-                        </td>
-                        <td>
-                            <div id="star-totonoi">
-                                <star-totonoi :rating="{{ $post->totonoi_score }}" :read-only="true"
-                                    :increment="0.01"></star-totonoi>
-                            </div>
-                        </td>
-                        <td>
-                            <div id="star-rt">
-                                <star-rt :rating="{{ $post->rt_score }}" :read-only="true"
-                                    :increment="0.01"></star-rt>
-                            </div>
-                        </td>
-                        <td>
-                            <div id="star-wt">
-                                <star-wt :rating="{{ $post->wt_score }}" :read-only="true"
-                                    :increment="0.01"></star-wt>
-                            </div>
-                        </td>
-                        <td>
-                            <div id="star-rest">
-                                <star-rest :rating="{{ $post->rest_score }}" :read-only="true"
-                                    :increment="0.01"></star-rest>
-                            </div>
-                        </td>
-                        <td>
-                            <div id="star-cong">
-                                <star-cong :rating="{{ $post->cong_score }}" :read-only="true"
-                                    :increment="0.01"></star-cong>
-                            </div>
-                        </td>
-
-
-
-
-                        <td>{{ $post->all_score }}点</td>
-                        <td>{{ $post->totonoi_score }}点</td>
-                        <td>{{ $post->rt_score }}点</td>
-                        <td>{{ $post->wt_score }}点</td>
-                        <td>{{ $post->rest_score }}点</td>
-                        <td>{{ $post->cong_score }}点</td>
-                        <td>{{ $post->visit_date }}</td>
-                        <td>{{ $post->comment }}</td>
-                        <td>
-                            <form action="{{ url($post->id . '/post_edit') }}" method="get">
-                                {{ csrf_field() }}
-                                <button type="submit" class="btn btn-secondary">
-                                    <i class="fa fa-pencil"></i> 編集
-                                </button>
-                            </form>
-                        </td>
-                        <td>
-                            <form action="{{ url('/detail/' . $post->id) }}" method="post">
-                                {{ csrf_field() }}
-                                {{ method_field('DELETE') }}
-                                <button type="submit" class="btn btn-secondary">
-                                    <i class="fa fa-trash"></i> 削除
-                                </button>
-                            </form>
-                        </td>
-                    </tr> --}}
-                @endforeach
-    @endif
-    </tbody>
-    <tfoot>
-        <tr>
-            <td colspan="7" class="bg-light pb-0">
-                {{ $posts->links() }}
-            </td>
-        </tr>
-    </tfoot>
-    </table>
 
     <div class="form-group col-12">
         <div class="d-grid gap-2">

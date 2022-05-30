@@ -38,7 +38,7 @@ class PlacePostController extends Controller
 
         Log::debug($place); //ログ出力（変数）
         // $posts = Post::where('place_id', $place->id)->get();
-        $posts = Post::where('place_id', $place->id)->orderBy('id', 'asc')->paginate(5);
+        $posts = Post::where('place_id', $place->id)->orderBy('id', 'asc')->paginate(10);
         Log::debug($place); //ログ出力（変数）
         Log::debug(print_r($posts, true)); //ログ出力（配列）
         return view('detail', compact('place', 'posts'));

@@ -645,6 +645,21 @@ hr {
     text-align: center;
 }
 
+
+
+.th-star-read {
+    /* display: inline; */
+    width: 200px;
+    text-align: center;
+    /* table-layout: fixed; */
+}
+
+.td-star-read {
+    /* display: inline-block; */
+    /* width: 300px; */
+    text-align: center;
+}
+
 .scroll-table {
     /* overflow: auto; */
     white-space: nowrap;
