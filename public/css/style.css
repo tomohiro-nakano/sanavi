@@ -662,7 +662,7 @@ hr {
 .th-star-read {
     width: 140px;
     text-align: center;
-    overflow:hidden;
+    overflow: hidden;
     overflow-wrap: break-word;
     word-wrap: break-word;
 }
@@ -670,7 +670,7 @@ hr {
 .th-comment {
     width: 500px;
     text-align: center;
-    overflow:hidden;
+    overflow: hidden;
     overflow-wrap: break-word;
     word-wrap: break-word;
 }
@@ -688,4 +688,21 @@ hr {
 .th-delete {
     width: 80px;
     text-align: center;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+    }
+
+#copyrights {
+    position: absolute;
+    margin-top: 20px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.card {
+    margin-bottom: 100px;
 }
