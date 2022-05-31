@@ -101,6 +101,7 @@
                                                 class="d-none"> @csrf </form>
                                     </li>
                                 @endguest
+                                <li><a href="https://github.com/NakanoTomohiro/sanavi-app" class="text-light"><i class="fa fa-github" aria-hidden="true"></i> GitHub</a></li>
                             </ul>
                             {{-- </div> --}}
                         </div>
