@@ -15,9 +15,11 @@
                 <div class="form-group col-md-6 col-xs-12">
                     <div class="input-group">
                         <div class="input-group-prepend">
-                            <div class="input-group-text-2"><i class="fa fa-check-square-o" aria-hidden="true"></i>　施 設 名</div>
+                            <div class="input-group-text-2"><i class="fa fa-check-square-o" aria-hidden="true"></i>　施 設 名
+                            </div>
                         </div>
-                        <input disabled class="form-control bg-light" style="font-size:16px" value="{{ $place->place_name }}">
+                        <input disabled class="form-control bg-light" style="font-size:16px"
+                            value="{{ $place->place_name }}">
                     </div>
                 </div>
             </div>
@@ -130,8 +132,8 @@
                             <div class="input-group-text-2"><i class="fa fa-calendar-o"></i>　訪 問 日</div>
                         </div>
                         <input type="date" name="visit_date" class="form-control datetimepicker-input"
-                            value="{{ old('visit_date') == '' ? date("Y-m-d") : old('visit_date') }}" id="datetimepicker" data-toggle="datetimepicker"
-                            data-target="#datetimepicker">
+                            value="{{ old('visit_date') == '' ? date('Y-m-d') : old('visit_date') }}" id="datetimepicker"
+                            data-toggle="datetimepicker" data-target="#datetimepicker">
                     </div>
                 </div>
             </div>
@@ -143,7 +145,7 @@
                         <div class="input-group-prepend">
                             <div class="input-group-text-2"><i class="fa fa-commenting-o" aria-hidden="true"></i>　感　想</div>
                         </div>
-                        <textarea name="comment" cols="100" rows="5"></textarea>
+                        <textarea name="comment" cols="100" rows="5">{{ old('comment') }}</textarea>
                     </div>
                 </div>
             </div>

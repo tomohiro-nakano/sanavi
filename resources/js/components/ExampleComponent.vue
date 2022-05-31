@@ -4,7 +4,7 @@
                 :rating="post"
                 :read-only="true"
                 :increment="0.01"
-                :star-size="20"
+                :star-size="25"
             ></star-read>
         </div>
 </template>
