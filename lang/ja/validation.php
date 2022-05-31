@@ -120,6 +120,7 @@ return [
         'address' => '住所',
         'visit_date' => '訪問日',
         'comment' => '感想',
+        'date' => '今日',
       ],
 
 

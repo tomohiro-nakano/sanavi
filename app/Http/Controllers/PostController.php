@@ -26,6 +26,7 @@ class PostController extends Controller
         $validator = Validator::make($request->all(), [
             'place_id' => 'required',
             'visit_date' => 'required | date',
+            'visit_date' => 'before:date',
             'comment' => 'required | string',
         ]);
 

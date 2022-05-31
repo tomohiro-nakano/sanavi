@@ -130,7 +130,7 @@
                             <div class="input-group-text-2"><i class="fa fa-calendar-o"></i>　訪 問 日</div>
                         </div>
                         <input type="date" name="visit_date" class="form-control datetimepicker-input"
-                            value="{{ old('visit_date') }}" id="datetimepicker" data-toggle="datetimepicker"
+                            value="{{ old('visit_date') == '' ? date("Y-m-d") : old('visit_date') }}" id="datetimepicker" data-toggle="datetimepicker"
                             data-target="#datetimepicker">
                     </div>
                 </div>
