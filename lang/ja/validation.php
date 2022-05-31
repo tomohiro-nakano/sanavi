@@ -84,6 +84,7 @@ return [
     'uploaded'             => ':attributeのアップロードに失敗しました。',
     'url'                  => ':attributeには正しい形式のURLを指定してください。',
 
+
     /*
     |--------------------------------------------------------------------------
     | Custom Validation Language Lines
@@ -121,7 +122,15 @@ return [
         'visit_date' => '訪問日',
         'comment' => '感想',
         'date' => '今日',
+        'today+1' => '今日',
+        'before' => '今日',
+
       ],
 
+      'values' => [
+        'visit_date' => [
+            'today+1' => '今日'
+        ],
+    ],
 
 ];
