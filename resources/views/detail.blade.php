@@ -189,23 +189,45 @@
                                     </td>
                                     <td>{{ $post->visit_date }}</td>
                                     <td class="th-comment">{{ $post->comment }}</td>
-                                    <td>
-                                        <form action="{{ url($post->id . '/post_edit') }}" method="get">
-                                            {{ csrf_field() }}
-                                            <button type="submit" class="btn btn-secondary">
-                                                <i class="fa fa-pencil"></i> 編集
-                                            </button>
-                                        </form>
-                                    </td>
-                                    <td>
-                                        <form action="{{ url('/detail/' . $post->id) }}" method="post">
-                                            {{ csrf_field() }}
-                                            {{ method_field('DELETE') }}
-                                            <button type="submit" class="btn btn-secondary">
-                                                <i class="fa fa-trash"></i> 削除
-                                            </button>
-                                        </form>
-                                    </td>
+
+                                    {{-- ログイン済み ＆ ログインユーザと同じIDの投稿だったら編集削除可能 --}}
+                                    @if (Auth::check() == true and $post->user_id == Auth::user()->id)
+                                        <td>
+                                            <form action="{{ url($post->id . '/post_edit') }}" method="get">
+                                                {{ csrf_field() }}
+                                                <button type="submit" class="btn btn-secondary">
+                                                    <i class="fa fa-pencil"></i> 編集
+                                                </button>
+                                            </form>
+                                        </td>
+                                        <td>
+                                            <form action="{{ url('/detail/' . $post->id) }}" method="post">
+                                                {{ csrf_field() }}
+                                                {{ method_field('DELETE') }}
+                                                <button type="submit" class="btn btn-secondary">
+                                                    <i class="fa fa-trash"></i> 削除
+                                                </button>
+                                            </form>
+                                        </td>
+                                    @else
+                                        <td>
+                                            <form action="{{ url($post->id . '/post_edit') }}" method="get">
+                                                {{ csrf_field() }}
+                                                <button type="submit" class="btn btn-secondary" disabled>
+                                                    <i class="fa fa-pencil"></i> 編集
+                                                </button>
+                                            </form>
+                                        </td>
+                                        <td>
+                                            <form action="{{ url('/detail/' . $post->id) }}" method="post">
+                                                {{ csrf_field() }}
+                                                {{ method_field('DELETE') }}
+                                                <button type="submit" class="btn btn-secondary" disabled>
+                                                    <i class="fa fa-trash"></i> 削除
+                                                </button>
+                                            </form>
+                                        </td>
+                                    @endif
                                 </tr>
                             @endforeach
                         </thead>
