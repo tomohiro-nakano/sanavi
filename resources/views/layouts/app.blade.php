@@ -37,6 +37,7 @@
     <!-- Main Stylesheet File -->
     {{-- <link href="css/style.css" rel="stylesheet"> --}}
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    {{-- <link href="{{ asset('css/style2.css') }}" rel="stylesheet"> --}}
 
     <link rel="stylesheet" href="https://unpkg.com/scroll-hint@1.1.10/css/scroll-hint.css">
     <link rel="stylesheet" href="scroll-hint.css">
@@ -111,6 +112,7 @@
                 </div>
             </nav>
         </header>
+        @yield('top')
         <main class="container">
             <div class="card">
                 <h2 class="display-5 card-title text-center mt-4">@yield('title')</h2>
