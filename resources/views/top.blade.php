@@ -101,12 +101,9 @@
                             <li><a href="https://github.com/NakanoTomohiro/sanavi-app" class="text-light"><i
                                         class="fa fa-github" aria-hidden="true"></i> GitHub</a></li>
                         </ul>
-                        {{-- </div> --}}
                     </div>
-                    <!--/.nav-collapse -->
                 </div>
             </div>
-            {{-- </nav> --}}
         </header>
 
         <div class="slideBox">
