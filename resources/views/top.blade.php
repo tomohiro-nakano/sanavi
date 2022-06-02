@@ -83,7 +83,6 @@
                                 @endif
                                 <!-- ログイン済みユーザ -->
                             @else
-                                <!-- ドロップダウンメニュー -->
                                 <li class="nav-item dropdown">
                                     <a class="nav-link text-light" href="#" id="navbarDropdown" role="button"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

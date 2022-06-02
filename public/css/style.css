@@ -722,20 +722,20 @@ html {
     height: 873px;
     overflow: hidden;
     position: relative;
-  }
+}
 
-  /* テキストがあるバージョン */
-  .title {
+/* テキストがあるバージョン */
+.title {
     /* font-size: 32px;
     color: #fff; */
     z-index: 11;
     position: absolute;
     top: 30%;
     left: 34%;
-    transform: translate(-50%,-50%);
-  }
+    transform: translate(-50%, -50%);
+}
 
-  .item2 {
+.item2 {
     z-index: 10;
     opacity: 0;
     width: 100%;
@@ -748,53 +748,61 @@ html {
     top: 0;
     -webkit-animation: anime 15s 0s infinite;
     animation: anime 15s 0s infinite;
-  }
+}
 
-  .item2:nth-of-type(2) {
+.item2:nth-of-type(2) {
     -webkit-animation-delay: 5s;
     animation-delay: 5s;
-  }
+}
 
-  .item2:nth-of-type(3) {
+.item2:nth-of-type(3) {
     -webkit-animation-delay: 10s;
     animation-delay: 10s;
-  }
+}
 
-  /* ふわっとアニメーション */
-  @keyframes anime {
+/* ふわっとアニメーション */
+@keyframes anime {
     0% {
-      opacity: 0;
+        opacity: 0;
     }
-    30% {
-      opacity: 1;
-    }
-    35% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0;
-      z-index: 9;
-    }
-    100% {
-      opacity: 0;
-    }
-  }
 
-  @-webkit-keyframes anime {
-    0% {
-      opacity: 0;
-    }
     30% {
-      opacity: 1;
+        opacity: 1;
     }
+
     35% {
-      opacity: 1;
+        opacity: 1;
     }
+
     50% {
-      opacity: 0;
-      z-index: 9;
+        opacity: 0;
+        z-index: 9;
     }
+
     100% {
-      opacity: 0;
+        opacity: 0;
     }
-  }
+}
+
+@-webkit-keyframes anime {
+    0% {
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    35% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+        z-index: 9;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
