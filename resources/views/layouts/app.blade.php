@@ -35,10 +35,7 @@
     <link href="{{ asset('lib/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
 
     <!-- Main Stylesheet File -->
-    {{-- <link href="css/style.css" rel="stylesheet"> --}}
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-    {{-- <link href="{{ asset('css/style2.css') }}" rel="stylesheet"> --}}
-
     <link rel="stylesheet" href="https://unpkg.com/scroll-hint@1.1.10/css/scroll-hint.css">
     <link rel="stylesheet" href="scroll-hint.css">
 
@@ -48,71 +45,66 @@
 <body>
     <div id="app">
         <header class="gl-header">
-            <!-- Fixed navbar -->
-            <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-                <div class="navbar navbar-inverse navbar-fixed-top navbar-expand-md">
+            <div class="navbar navbar-inverse navbar-fixed-top navbar-expand-md">
+                <a class="container" href="/"><img src="{{ asset('img/logo/header_logo.png') }}"
+                        id="header_logo"></a>
+                <button class="navbar-toggler container" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                     <div class="container">
-                        <a href="/"><img src="{{ asset('img/logo/header_logo.png') }}" id="header_logo"></a>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse"
-                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-                            {{-- <div class="navbar-collapse collapse"> --}}
-                            <ul class="nav navbar-nav navbar-right">
-                                <li><a href="/" class="text-light"> TOP</a></li>
-                                <li><a href="/about" class="text-light"> Sanaviとは?</a></li>
-                                <li><a href="/place_post" class="text-light"><i class="fa fa-plus"></i> 施設投稿</a>
-                                </li>
-                                <li><a href="/place_list" class="text-light"><i class="fa fa-list"
-                                            aria-hidden="true"></i> 施設一覧</a></li>
-                                {{-- <li><a data-toggle="modal" data-target="#myModal" href="#myModal"
-                                        class="text-light"><i class="fa fa-envelope-o"></i></a></li> --}}
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="/" class="text-light"> TOP</a></li>
+                            <li><a href="/about" class="text-light"> Sanaviとは?</a></li>
+                            <li><a href="/place_post" class="text-light"><i class="fa fa-plus"></i> 施設投稿</a>
+                            </li>
+                            <li><a href="/place_list" class="text-light"><i class="fa fa-list"
+                                        aria-hidden="true"></i> 施設一覧</a></li>
 
-                                @guest
-                                    @if (Route::has('login'))
-                                        <li class="nav-item">
-                                            <a class="nav-link text-light" href="{{ route('login') }}">
-                                                <i class="fa fa-sign-in"></i> {{ __('ja.Login') }}
-                                            </a>
-                                        </li>
-                                    @endif
-                                    @if (Route::has('register'))
-                                        <li class="nav-item">
-                                            <a class="nav-link text-light" href="{{ route('register') }}">
-                                                <i class="fa fa-user"></i> {{ __('ja.Assign') }}
-                                            </a>
-                                        </li>
-                                    @endif
-                                    <!-- ログイン済みユーザ -->
-                                @else
-                                    <!-- ドロップダウンメニュー -->
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link text-light" href="#" id="navbarDropdown" role="button"
-                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            {{ Auth::user()->name }} <span class="caret"></span>
+                            @guest
+                                @if (Route::has('login'))
+                                    <li class="nav-item">
+                                        <a class="nav-link text-light" href="{{ route('login') }}">
+                                            <i class="fa fa-sign-in"></i> {{ __('ja.Login') }}
                                         </a>
-                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                            <a class="dropdown-item" href="{{ route('logout') }}"
-                                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                                <i class="fa fa-sign-out"></i> {{ __('ja.Logout') }}
-                                            </a>
-                                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                                class="d-none"> @csrf </form>
                                     </li>
-                                @endguest
-                                <li><a href="https://github.com/NakanoTomohiro/sanavi-app" class="text-light"><i
-                                            class="fa fa-github" aria-hidden="true"></i> GitHub</a></li>
-                            </ul>
-                            {{-- </div> --}}
-                        </div>
-                        <!--/.nav-collapse -->
+                                @endif
+                                @if (Route::has('register'))
+                                    <li class="nav-item">
+                                        <a class="nav-link text-light" href="{{ route('register') }}">
+                                            <i class="fa fa-user"></i> {{ __('ja.Assign') }}
+                                        </a>
+                                    </li>
+                                @endif
+                                <!-- ログイン済みユーザ -->
+                            @else
+                                <!-- ドロップダウンメニュー -->
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link text-light" href="#" id="navbarDropdown" role="button"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        {{ Auth::user()->name }} <span class="caret"></span>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                            <i class="fa fa-sign-out"></i> {{ __('ja.Logout') }}
+                                        </a>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                            class="d-none"> @csrf </form>
+                                </li>
+                            @endguest
+                            <li><a href="https://github.com/NakanoTomohiro/sanavi-app" class="text-light"><i
+                                        class="fa fa-github" aria-hidden="true"></i> GitHub</a></li>
+                        </ul>
+                        {{-- </div> --}}
                     </div>
+                    <!--/.nav-collapse -->
                 </div>
-            </nav>
+            </div>
         </header>
-        @yield('top')
+
         <main class="container">
             <div class="card">
                 <h2 class="display-5 card-title text-center mt-4">@yield('title')</h2>

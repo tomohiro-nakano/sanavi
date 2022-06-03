@@ -35,10 +35,7 @@
     <link href="{{ asset('lib/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
 
     <!-- Main Stylesheet File -->
-    {{-- <link href="css/style.css" rel="stylesheet"> --}}
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-    {{-- <link href="{{ asset('css/style2.css') }}" rel="stylesheet"> --}}
-
     <link rel="stylesheet" href="https://unpkg.com/scroll-hint@1.1.10/css/scroll-hint.css">
     <link rel="stylesheet" href="scroll-hint.css">
 
@@ -49,15 +46,15 @@
     <div id="app">
         <header class="gl-header">
             <div class="navbar navbar-inverse navbar-fixed-top navbar-expand-md">
-                <div class="container">
-                    <a href="/"><img src="{{ asset('img/logo/header_logo.png') }}" id="header_logo"></a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse"
-                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-                        {{-- <div class="navbar-collapse collapse"> --}}
+                <a class="container" href="/"><img src="{{ asset('img/logo/header_logo.png') }}"
+                        id="header_logo"></a>
+                <button class="navbar-toggler container" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                    <div class="container">
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="/" class="text-light"> TOP</a></li>
                             <li><a href="/about" class="text-light"> Sanaviとは?</a></li>
@@ -83,6 +80,7 @@
                                 @endif
                                 <!-- ログイン済みユーザ -->
                             @else
+                                <!-- ドロップダウンメニュー -->
                                 <li class="nav-item dropdown">
                                     <a class="nav-link text-light" href="#" id="navbarDropdown" role="button"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -100,23 +98,25 @@
                             <li><a href="https://github.com/NakanoTomohiro/sanavi-app" class="text-light"><i
                                         class="fa fa-github" aria-hidden="true"></i> GitHub</a></li>
                         </ul>
+                        {{-- </div> --}}
                     </div>
+                    <!--/.nav-collapse -->
                 </div>
             </div>
         </header>
 
         <div class="slideBox">
             <div id="headerwrap">
-                <div class="container">
-                    <div class="row centered">
-                        <div class="col-lg-8 col-lg-offset-2 title">
-                                <h1>Sanavi</h1>
-                                <h2>sauna review site</h2>
-                                @if (Auth::check() == false)
+                <div class="row centered">
+                    <div class="col-lg-8 col-lg-offset-2 title">
+                        <div class="container">
+                            <h1>Sanavi</h1>
+                            <h2>sauna review site</h2>
+                            @if (Auth::check() == false)
                                 <h3>まずはログインまたは、ユーザ登録をしましょう</h3>
                                 <a href="{{ route('login') }}" class="btn btn-primary btn-lg">ログイン</a>
                                 <a href="{{ route('register') }}" class="btn btn-primary btn-lg">新規ユーザ登録</a>
-                                @endif
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -124,7 +124,8 @@
             <div class="item2" style="background-image: url(../img/top_bg_sauna1.jpg)"></div>
             <div class="item2" style="background-image: url(../img/top_bg_sauna2.jpg)"></div>
             <div class="item2" style="background-image: url(../img/top_bg_sauna3.jpg)"></div>
-          </div>
+        </div>
+
 
         <footer>
             <div id="copyrights">

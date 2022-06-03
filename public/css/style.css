@@ -698,18 +698,7 @@ hr {
     text-align: center;
 }
 
-html {
-    position: relative;
-    min-height: 100%;
-}
 
-#copyrights {
-    position: absolute;
-    margin-top: 20px;
-    bottom: 0;
-    left: 0;
-    right: 0;
-}
 
 .card {
     margin-bottom: 100px;
@@ -717,11 +706,12 @@ html {
 
 
 
-
 .slideBox {
-    height: 873px;
+    height: 900px;
     overflow: hidden;
     position: relative;
+    margin-bottom: 0;
+    /* margin-top: -300px; */
 }
 
 /* テキストがあるバージョン */
@@ -730,16 +720,16 @@ html {
     color: #fff; */
     z-index: 11;
     position: absolute;
-    top: 30%;
+    /* top: 30%;
     left: 34%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); */
 }
 
 .item2 {
     z-index: 10;
     opacity: 0;
     width: 100%;
-    height: 873px;
+    height: 100%;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -805,4 +795,19 @@ html {
     100% {
         opacity: 0;
     }
+}
+
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+#copyrights {
+    z-index: 111;
+    position: absolute;
+    margin-top: 80px;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
