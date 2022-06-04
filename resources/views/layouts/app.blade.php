@@ -58,7 +58,7 @@
                         <div class="container">
                             <ul class="nav navbar-nav navbar-right">
                                 <li><a href="/" class="text-light"> TOP</a></li>
-                                <li><a href="/about" class="text-light"> Sanaviとは?</a></li>
+                                <li><a href="/#about" class="text-light"> Sanaviとは?</a></li>
                                 <li><a href="/place_post" class="text-light"><i class="fa fa-plus"></i> 施設投稿</a>
                                 </li>
                                 <li><a href="/place_list" class="text-light"><i class="fa fa-list"

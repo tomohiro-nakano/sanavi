@@ -43,105 +43,119 @@
 </head>
 
 <body>
-    <div id="app">
-        <header class="gl-header">
-            <nav class="navbar-light">
-                <div class="navbar navbar-inverse navbar-fixed-top navbar-expand-md">
-                    <a class="container" href="/"><img src="{{ asset('img/logo/header_logo.png') }}"
-                            id="header_logo"></a>
-                    <button class="navbar-toggler container" type="button" data-toggle="collapse"
-                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-                        <div class="container">
-                            <ul class="nav navbar-nav navbar-right">
-                                <li><a href="/" class="text-light"> TOP</a></li>
-                                <li><a href="/about" class="text-light"> Sanaviとは?</a></li>
-                                <li><a href="/place_post" class="text-light"><i class="fa fa-plus"></i> 施設投稿</a>
-                                </li>
-                                <li><a href="/place_list" class="text-light"><i class="fa fa-list"
-                                            aria-hidden="true"></i> 施設一覧</a></li>
+    {{-- <div id="app"> --}}
+    <header class="gl-header">
+        <nav class="navbar-light">
+            <div class="navbar navbar-inverse navbar-fixed-top navbar-expand-md">
+                <a class="container" href="/"><img src="{{ asset('img/logo/header_logo.png') }}"
+                        id="header_logo"></a>
+                <button class="navbar-toggler container" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                    <div class="container">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="/" class="text-light"> TOP</a></li>
+                            <li><a href="#about" class="text-light"> Sanaviとは?</a></li>
+                            <li><a href="/place_post" class="text-light"><i class="fa fa-plus"></i> 施設投稿</a>
+                            </li>
+                            <li><a href="/place_list" class="text-light"><i class="fa fa-list"
+                                        aria-hidden="true"></i> 施設一覧</a></li>
 
-                                @guest
-                                    @if (Route::has('login'))
-                                        <li class="nav-item">
-                                            <a class="nav-link text-light" href="{{ route('login') }}">
-                                                <i class="fa fa-sign-in"></i> {{ __('ja.Login') }}
-                                            </a>
-                                        </li>
-                                    @endif
-                                    @if (Route::has('register'))
-                                        <li class="nav-item">
-                                            <a class="nav-link text-light" href="{{ route('register') }}">
-                                                <i class="fa fa-user"></i> {{ __('ja.Assign') }}
-                                            </a>
-                                        </li>
-                                    @endif
-                                    <!-- ログイン済みユーザ -->
-                                @else
-                                    <!-- ドロップダウンメニュー -->
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link text-light" href="#" id="navbarDropdown" role="button"
-                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            {{ Auth::user()->name }} <span class="caret"></span>
+                            @guest
+                                @if (Route::has('login'))
+                                    <li class="nav-item">
+                                        <a class="nav-link text-light" href="{{ route('login') }}">
+                                            <i class="fa fa-sign-in"></i> {{ __('ja.Login') }}
                                         </a>
-                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                            <a class="dropdown-item" href="{{ route('logout') }}"
-                                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                                <i class="fa fa-sign-out"></i> {{ __('ja.Logout') }}
-                                            </a>
-                                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                                class="d-none"> @csrf </form>
                                     </li>
-                                @endguest
-                                <li><a href="https://github.com/NakanoTomohiro/sanavi-app" class="text-light"><i
-                                            class="fa fa-github" aria-hidden="true"></i> GitHub</a></li>
-                            </ul>
-                            {{-- </div> --}}
-                        </div>
-                        <!--/.nav-collapse -->
+                                @endif
+                                @if (Route::has('register'))
+                                    <li class="nav-item">
+                                        <a class="nav-link text-light" href="{{ route('register') }}">
+                                            <i class="fa fa-user"></i> {{ __('ja.Assign') }}
+                                        </a>
+                                    </li>
+                                @endif
+                                <!-- ログイン済みユーザ -->
+                            @else
+                                <!-- ドロップダウンメニュー -->
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link text-light" href="#" id="navbarDropdown" role="button"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        {{ Auth::user()->name }} <span class="caret"></span>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                            <i class="fa fa-sign-out"></i> {{ __('ja.Logout') }}
+                                        </a>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                            class="d-none"> @csrf </form>
+                                </li>
+                            @endguest
+                            <li><a href="https://github.com/NakanoTomohiro/sanavi-app" class="text-light"><i
+                                        class="fa fa-github" aria-hidden="true"></i> GitHub</a></li>
+                        </ul>
+                        {{-- </div> --}}
                     </div>
+                    <!--/.nav-collapse -->
                 </div>
-            </nav>
-        </header>
+            </div>
+        </nav>
+    </header>
 
-        <div class="slideBox">
-            <div id="headerwrap">
-                <div class="row centered">
-                    <div class="col-lg-8 col-lg-offset-2 title">
-                        <div class="container">
-                            <h1>Sanavi</h1>
-                            <h2>sauna review site</h2>
-                            @if (Auth::check() == false)
-                                <h3>まずはログインまたは、ユーザ登録をしましょう</h3>
-                                <a href="{{ route('login') }}" class="btn btn-primary btn-lg">ログイン</a>
-                                <a href="{{ route('register') }}" class="btn btn-primary btn-lg">新規ユーザ登録</a>
-                            @endif
-                        </div>
+    <div class="slideBox">
+        <div id="headerwrap">
+            <div class="row centered">
+                <div class="col-lg-8 col-lg-offset-2 title">
+                    <div class="container">
+                        <h1>Sanavi</h1>
+                        <h2>sauna review site</h2>
+                        @if (Auth::check() == false)
+                            <h3>まずはログインまたは、ユーザ登録をしましょう</h3>
+                            <a href="{{ route('login') }}" class="btn btn-primary btn-lg">ログイン</a>
+                            <a href="{{ route('register') }}" class="btn btn-primary btn-lg">新規ユーザ登録</a>
+                        @endif
                     </div>
                 </div>
             </div>
-            <div class="item2" style="background-image: url(../img/top_bg_sauna1.jpg)"></div>
-            <div class="item2" style="background-image: url(../img/top_bg_sauna2.jpg)"></div>
-            <div class="item2" style="background-image: url(../img/top_bg_sauna3.jpg)"></div>
         </div>
+        <div class="item2" style="background-image: url(../img/top_bg_sauna1.jpg)"></div>
+        <div class="item2" style="background-image: url(../img/top_bg_sauna2.jpg)"></div>
+        <div class="item2" style="background-image: url(../img/top_bg_sauna3.jpg)"></div>
+    </div>
 
-
-        <footer>
-            <div id="copyrights">
-                <div class="container">
-                    <p>
-                        &copy; Copyrights <strong>Tomohiro Nakano</strong>. All Rights Reserved
+    <div class="container">
+        <div class="about" id="about">
+            <div class="row centered">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <img src="img/logo/logo_transparent.png" width="auto" height="400px">
+                    <h3>Sanaviは国内のサウナレビューサービスです</h3>
+                    <p class="about-text">サウナ施設の情報投稿・口コミを閲覧できる機能をベースに、「ととのい度・室温・水温・外気浴・混雑度」の５項目＋総合評価の６項目
+                        でレビューができます。サウナ施設に行った記録やメモ・備忘録としてもお使いいただけます。感想や情報を共有してコミュニケーションツールとしてご利用いただけます。
                     </p>
                 </div>
             </div>
-        </footer>
+        </div>
+    </div>
 
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <footer>
+        <div id="copyrights">
+            <div class="container">
+                <p>
+                    &copy; Copyrights <strong>Tomohiro Nakano</strong>. All Rights Reserved
+                </p>
+            </div>
+        </div>
+    </footer>
 </body>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
 
 </html>

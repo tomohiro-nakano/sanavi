@@ -133,7 +133,7 @@ hr {
     text-align: center;
     background-attachment: relative;
     background-position: center center;
-    min-height: 900px;
+    min-height: 1000px;
     width: 100%;
     -webkit-background-size: 100%;
     -moz-background-size: 100%;
@@ -147,7 +147,7 @@ hr {
 
 
 #headerwrap h1 {
-    margin-top: 280px;
+    margin-top: 340px;
     color: white;
     font-size: 100px;
     font-weight: 50;
@@ -707,22 +707,15 @@ hr {
 
 
 .slideBox {
-    height: 900px;
+    height: 1000px;
     overflow: hidden;
     position: relative;
-    margin-bottom: 0;
-    /* margin-top: -300px; */
 }
 
 /* テキストがあるバージョン */
 .title {
-    /* font-size: 32px;
-    color: #fff; */
     z-index: 11;
     position: absolute;
-    /* top: 30%;
-    left: 34%;
-    transform: translate(-50%, -50%); */
 }
 
 .item2 {
@@ -801,6 +794,15 @@ hr {
 html {
     position: relative;
     min-height: 100%;
+}
+
+.about {
+    margin-top: 100px;
+    margin-bottom: 300px;
+}
+
+.about-text {
+    /* font-size: 18px; */
 }
 
 #copyrights {
